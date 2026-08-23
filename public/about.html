@@ -1,0 +1,1509 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ספיר | סטיילינג רוחני - גלי את הנשמה שמאחורי הארון</title>
+
+    <meta
+        name="description"
+        content="היי, אני ספיר, סטייליסטית רוחנית. גלי את מפות היופי שלך, בני ארון מנצח וקבלי ליווי אישי שיהפוך את הסטייל שלך לשפה שמחברת יופי פנימי וחיצוני."
+    >
+
+    <meta name="theme-color" content="#FCEBEE">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&family=Bellefair&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            powder: '#FCEBEE',
+                            light: '#FDFBF7',
+                            beige: '#F2EBE5',
+                            fuchsia: '#C21A65',
+                            dark: '#4A3631',
+                            baby: '#F4C2C2'
+                        }
+                    },
+
+                    fontFamily: {
+                        sans: ['Assistant', 'sans-serif'],
+                        serif: ['Bellefair', 'serif']
+                    },
+
+                    boxShadow: {
+                        soft: '0 20px 40px -15px rgba(194, 26, 101, 0.1)',
+                        card: '0 10px 30px -10px rgba(74, 54, 49, 0.08)'
+                    }
+                }
+            }
+        };
+    </script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            overflow-x: hidden;
+            background-color: #FDFBF7;
+            color: #4A3631;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Bellefair', serif;
+        }
+
+        .divider {
+            width: 100%;
+            line-height: 0;
+            overflow: hidden;
+            display: block;
+        }
+
+        .divider svg {
+            display: block;
+            width: 100%;
+            height: 80px;
+        }
+
+        .blob-shape {
+            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+        }
+
+        .linktree-btn {
+            transition: all 0.3s ease;
+        }
+
+        .linktree-btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 15px 30px -10px rgba(194, 26, 101, 0.3);
+        }
+
+        /* Accessibility: keyboard focus */
+        a:focus-visible,
+        button:focus-visible {
+            outline: 3px solid #C21A65;
+            outline-offset: 4px;
+        }
+
+        /* Skip link */
+        .skip-link {
+            position: fixed;
+            top: -100px;
+            right: 20px;
+            z-index: 99999;
+            background: #4A3631;
+            color: #fff;
+            padding: 12px 20px;
+            border-radius: 0 0 12px 12px;
+            font-weight: 700;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+    </style>
+</head>
+
+<body class="font-sans antialiased text-brand-dark">
+
+    <!-- Skip to content -->
+    <a href="#main-content" class="skip-link">
+        דילוג לתוכן הראשי
+    </a>
+
+
+    <!-- ======================================================
+         NAVIGATION
+    ======================================================= -->
+
+    <nav
+        class="fixed w-full z-50 bg-brand-light/90 backdrop-blur-md border-b border-brand-powder"
+        aria-label="ניווט ראשי"
+    >
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="flex justify-between items-center h-20">
+
+                <!-- Logo -->
+                <a
+                    href="/"
+                    class="font-serif text-3xl font-bold text-brand-fuchsia"
+                    aria-label="ספיר סרוסי - עמוד הבית"
+                >
+                    Sapir sarussi
+                </a>
+
+
+                <!-- Desktop navigation -->
+                <div class="hidden md:flex space-x-8 space-x-reverse">
+
+                    <a
+                        href="#about-section"
+                        class="text-brand-dark hover:text-brand-fuchsia transition font-medium text-lg"
+                    >
+                        אודות
+                    </a>
+
+                    <a
+                        href="#services-section"
+                        class="text-brand-dark hover:text-brand-fuchsia transition font-medium text-lg"
+                    >
+                        שירותים
+                    </a>
+
+                    <a
+                        href="#testimonials-section"
+                        class="text-brand-dark hover:text-brand-fuchsia transition font-medium text-lg"
+                    >
+                        המלצות
+                    </a>
+
+                    <a
+                        href="#linktree-section"
+                        class="text-brand-dark hover:text-brand-fuchsia transition font-medium text-lg"
+                    >
+                        יצירת קשר / קישורים
+                    </a>
+
+                </div>
+
+
+                <!-- Desktop CTA -->
+                <div class="hidden md:flex">
+
+                    <a
+                        href="#linktree-section"
+                        class="bg-brand-fuchsia text-white px-6 py-2 rounded-full font-medium hover:bg-opacity-90 transition shadow-soft"
+                    >
+                        בואי נדבר
+                    </a>
+
+                </div>
+
+
+                <!-- Mobile menu button -->
+                <button
+                    id="mobile-menu-button"
+                    type="button"
+                    class="md:hidden text-brand-dark p-2 rounded-lg"
+                    aria-label="פתיחת תפריט"
+                    aria-controls="mobile-menu"
+                    aria-expanded="false"
+                >
+                    <svg
+                        width="30"
+                        height="30"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        aria-hidden="true"
+                    >
+                        <path d="M4 6h16"></path>
+                        <path d="M4 12h16"></path>
+                        <path d="M4 18h16"></path>
+                    </svg>
+                </button>
+
+            </div>
+
+
+            <!-- Mobile menu -->
+            <div
+                id="mobile-menu"
+                class="hidden md:hidden pb-5"
+            >
+                <div class="flex flex-col gap-3">
+
+                    <a
+                        href="#about-section"
+                        class="mobile-nav-link py-2 font-medium"
+                    >
+                        אודות
+                    </a>
+
+                    <a
+                        href="#services-section"
+                        class="mobile-nav-link py-2 font-medium"
+                    >
+                        שירותים
+                    </a>
+
+                    <a
+                        href="#testimonials-section"
+                        class="mobile-nav-link py-2 font-medium"
+                    >
+                        המלצות
+                    </a>
+
+                    <a
+                        href="#linktree-section"
+                        class="mobile-nav-link py-2 font-medium"
+                    >
+                        יצירת קשר / קישורים
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+
+    <main id="main-content">
+
+
+        <!-- ======================================================
+             HERO
+        ======================================================= -->
+
+        <header
+            class="pt-32 pb-20 lg:pt-40 lg:pb-28 relative overflow-hidden"
+            style="background-color:#FCEBEE;"
+        >
+
+            <div
+                class="absolute top-0 right-0 -mr-40 -mt-40 w-96 h-96 bg-brand-baby opacity-40 blob-shape blur-3xl"
+                aria-hidden="true"
+            ></div>
+
+            <div
+                class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-white opacity-50 blob-shape blur-2xl"
+                aria-hidden="true"
+            ></div>
+
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+
+                    <!-- Hero text -->
+                    <div>
+
+                        <h1 class="text-5xl lg:text-7xl font-bold leading-tight mb-6">
+
+                            <span class="block">
+                                לגלות את היופי שלך,
+                            </span>
+
+                            <span class="block text-brand-fuchsia">
+                                מבפנים החוצה ✨
+                            </span>
+
+                        </h1>
+
+
+                        <p class="text-xl lg:text-2xl mb-4 font-light leading-relaxed">
+
+                            היי, אני
+                            <strong>ספיר סרוסי, סטייליסטית רוחנית.</strong>
+
+                            <br>
+
+                            אני עוזרת לנשים לגלות מה באמת נכון להן ללבוש
+
+                            <br>
+
+                            לא לפי טרנדים ולא לפי מה ש"כולם לובשות",
+
+                            <br>
+
+                            אלא לפי
+                            <strong>מי שהן באמת.</strong>
+
+                            <br><br>
+
+                            דרך החיבור בין עולם האופנה לעולם הרוח.
+                            יצרתי שיטה שעוזרת לך להבין את הסגנון,
+                            הצבעים והלבוש שמתאימים לך ולבנות ארון
+                            שמרגיש <strong>את</strong> ועובד בשבילך.
+
+                            <br><br>
+
+                            <strong>רוצה לגלות מה המסלול שמתאים לך?</strong>
+
+                            <br>
+
+                            👇 המשיכי למטה
+
+                        </p>
+
+
+                        <div class="flex flex-col sm:flex-row gap-4 mt-8">
+
+                            <a
+                                href="#services-section"
+                                class="bg-brand-fuchsia text-white text-center px-8 py-4 rounded-full font-bold text-lg hover:bg-opacity-90 transition shadow-soft"
+                            >
+                                אני רוצה להתחיל את השינוי
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Hero image -->
+                    <div class="relative">
+
+                        <div
+                            class="absolute inset-0 bg-brand-beige rounded-full transform translate-x-4 translate-y-4 shadow-card"
+                            aria-hidden="true"
+                        ></div>
+
+                        <img
+                            src="https://media.landy-ai.com/Landy-Media/6a00b470fcdd04981ae34f86/u3yuehzs74-7183.jpg"
+                            alt="ספיר סרוסי, סטייליסטית רוחנית"
+                            fetchpriority="high"
+                            loading="eager"
+                            width="1080"
+                            height="720"
+                            class="relative rounded-t-full rounded-b-3xl shadow-soft object-cover w-full h-[600px] border-4 border-white"
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ======================================================
+             SOCIAL MEDIA
+        ======================================================= -->
+
+        <section
+            class="py-10 px-4"
+            style="background-color:#FCEBEE;"
+            aria-labelledby="social-title"
+        >
+
+            <div class="max-w-5xl mx-auto">
+
+                <div class="text-center bg-white/60 backdrop-blur-sm p-8 rounded-3xl shadow-sm border border-white">
+
+                    <h2
+                        id="social-title"
+                        class="text-2xl font-serif font-bold mb-6"
+                    >
+                        לפני שנמשיך את לגמרי מוזמנת לעקוב אחריי ברשתות:
+                    </h2>
+
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-right mb-8 text-brand-dark/80">
+
+                        <div>
+                            <span class="font-bold text-brand-fuchsia">
+                                • בפייסבוק:
+                            </span>
+                            פוסטים בלעדיים שעולים רק שם.
+                        </div>
+
+                        <div>
+                            <span class="font-bold text-brand-fuchsia">
+                                • באינסטגרם:
+                            </span>
+                            הצצה אל מאחורי הקלעים שלי.
+                        </div>
+
+                        <div>
+                            <span class="font-bold text-brand-fuchsia">
+                                • בטיקטוק:
+                            </span>
+                            הכול מהכול סטייל, השראה וחיוך.
+                        </div>
+
+                        <div>
+                            <span class="font-bold text-brand-fuchsia">
+                                • ביוטיוב:
+                            </span>
+                            ידע מעמיק על סטיילינג ואיפור.
+                        </div>
+
+                    </div>
+
+
+                    <div class="flex justify-center gap-6 flex-wrap">
+
+
+                        <!-- Instagram -->
+                        <a
+                            href="https://www.instagram.com/sapirsarussi?igsh=MTQ3ODFtcnZycDdmdQ=="
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-sm hover:shadow-md hover:text-brand-fuchsia transition transform hover:-translate-y-1"
+                            aria-label="האינסטגרם של ספיר"
+                        >
+                            <svg
+                                class="w-7 h-7 fill-current"
+                                viewBox="0 0 24 24"
+                                aria-hidden="true"
+                            >
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"></path>
+                            </svg>
+                        </a>
+
+
+                        <!-- Facebook -->
+                        <a
+                            href="https://www.facebook.com/share/18Zd5LwBs2/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-sm hover:shadow-md hover:text-[#1877F2] transition transform hover:-translate-y-1"
+                            aria-label="הפייסבוק של ספיר"
+                        >
+                            <svg
+                                class="w-7 h-7 fill-current"
+                                viewBox="0 0 24 24"
+                                aria-hidden="true"
+                            >
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path>
+                            </svg>
+                        </a>
+
+
+                        <!-- TikTok -->
+                        <a
+                            href="https://www.tiktok.com/@sapirsarussi"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-sm hover:shadow-md hover:text-black transition transform hover:-translate-y-1"
+                            aria-label="הטיקטוק של ספיר"
+                        >
+                            <svg
+                                class="w-7 h-7 fill-current"
+                                viewBox="0 0 24 24"
+                                aria-hidden="true"
+                            >
+                                <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.04.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93v7.2c0 1.96-.5 3.96-1.72 5.49-1.22 1.53-3.1 2.45-5.06 2.59-1.96.14-3.95-.27-5.59-1.4-1.64-1.13-2.65-2.92-2.92-4.91-.27-1.99.1-4.04 1.15-5.74 1.05-1.7 2.72-2.88 4.67-3.32 1.95-.44 4.02-.15 5.76.84V8.53c-1.16-.6-2.5-.83-3.8-.75-1.3.08-2.56.54-3.6 1.3-1.04.76-1.8 1.84-2.2 3.08-.4 1.24-.43 2.58-.1 3.84.33 1.26 1.05 2.37 2.05 3.12 1 .75 2.25 1.1 3.53 1.05 1.28-.05 2.5-.5 3.48-1.27.98-.77 1.6-1.85 1.8-3.08V.02z"></path>
+                            </svg>
+                        </a>
+
+
+                        <!-- YouTube -->
+                        <a
+                            href="https://www.youtube.com/@sapirsarussi"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-sm hover:shadow-md hover:text-[#FF0000] transition transform hover:-translate-y-1"
+                            aria-label="ערוץ היוטיוב של ספיר"
+                        >
+                            <svg
+                                class="w-8 h-8 fill-current"
+                                viewBox="0 0 24 24"
+                                aria-hidden="true"
+                            >
+                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path>
+                            </svg>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================================
+             DIVIDER
+        ======================================================= -->
+
+        <div class="divider" style="background:#FCEBEE;" aria-hidden="true">
+
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 1200 200"
+                preserveAspectRatio="none"
+            >
+                <path
+                    d="M0,0V200H1200V63.56C1131.99,79.66,1058.36,89.78,985.66,89.78C906.67,89.78,823.78,77.66,743.84,68.42C661.58,58.85,575.78,57.85,493.39,72.94C435.55,83.66,379.39,103,321.39,113.78C214.04,133.85,107.16,123.78,0,103.66Z"
+                    fill="#FDFBF7"
+                ></path>
+            </svg>
+
+        </div>
+
+
+        <!-- ======================================================
+             ABOUT
+        ======================================================= -->
+
+        <section
+            id="about-section"
+            class="py-20"
+            style="background-color:#FDFBF7;"
+        >
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                <div class="grid grid-cols-1 gap-16 items-start">
+
+                    <div>
+
+                        <h2 class="text-3xl lg:text-4xl font-bold mb-8 leading-tight text-center">
+                            נעים מאוד, אני ספיר 💗
+                        </h2>
+
+
+                        <p class="mb-6 text-lg leading-relaxed text-brand-dark/80 text-center">
+
+                            מאז שאני זוכרת את עצמי אהבתי אופנה, איפור ויופי.
+
+                            <br>
+
+                            אבל כשהתחלתי ללמוד סטיילינג, גיליתי שמשהו חסר לי.
+
+                            <br>
+
+                            לא רציתי להתלבש רק לפי חוקים, טרנדים או מה ש"נכון" על הנייר.
+                            רציתי להבין:
+
+                            <br><br>
+
+                            <strong>
+                                למה יש בגדים וצבעים שכשאני לובשת אותם
+                                אני פתאום מרגישה יותר אני?
+
+                                <br>
+
+                                ולמה אחרים, גם אם הם יפים,
+                                פשוט לא מרגישים שייכים אליי?
+                            </strong>
+
+                            <br><br>
+
+                            החיפוש הזה חיבר אותי לעולם הרוח וגילה לי
+                            שסטייל יכול להיות הרבה יותר ממה שאנחנו לובשות.
+
+                            <br>
+
+                            הוא יכול להיות
+                            <strong>שפה של הנשמה.</strong>
+
+                            <br>
+
+                            וככה נולדה שיטת הסטיילינג הרוחני שלי,
+                            <strong>
+                                חיבור בין היופי החיצוני לבין מי שאת מבפנים.
+                            </strong>
+
+                        </p>
+
+
+                        <h3 class="text-2xl font-serif text-brand-fuchsia mb-4 text-center font-bold">
+                            אז... מה את צריכה עכשיו?
+                        </h3>
+
+
+                        <div class="bg-brand-powder p-8 rounded-3xl mb-8 border border-white shadow-sm">
+
+                            <h4 class="font-bold text-xl mb-4 font-serif text-center">
+
+                                יש נשים שרוצות קודם כל
+                                <span class="text-brand-fuchsia">
+                                    לגלות מה נכון להן.
+                                </span>
+
+                                <br>
+
+                                יש נשים שכבר רוצות
+                                <span class="text-brand-fuchsia">
+                                    ללמוד לנהל את הארון שלהן בעצמן.
+                                </span>
+
+                                <br>
+
+                                ויש נשים שרוצות שמישהי תיקח אותן
+                                <span class="text-brand-fuchsia">
+                                    יד ביד ותעשה איתן את השינוי בפועל.
+                                </span>
+
+                            </h4>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================================
+             DIVIDER
+        ======================================================= -->
+
+        <div class="divider" style="background:#FDFBF7;" aria-hidden="true">
+
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 1200 120"
+                preserveAspectRatio="none"
+            >
+                <path
+                    d="M0,120V73.71c47.79-22.2,103.59-32.17,158-28,70.36,5.37,136.33,33.31,206.8,37.5,72.84,4.36,146.54-16.88,217.19-35.26,69.27-18,138.3-24.88,209.4-13.08,36.15,6,69.85,17.84,104.45,29.34C989.49,95,1113,134.29,1200,67.53V120Z"
+                    opacity=".25"
+                    fill="#F2EBE5"
+                ></path>
+
+                <path
+                    d="M0,120V104.19C13,83.08,27.64,63.14,47.69,47.95,99.41,8.73,165,9,224.58,28.42c31.15,10.15,60.09,26.07,89.67,39.8,40.92,19,84.73,46,130.83,49.67,36.26,2.85,70.9-9.42,98.6-31.56,31.77-25.39,62.32-62,103.63-73,40.44-10.79,81.35,6.69,119.13,24.28s75.16,39,116.92,43.05c59.73,5.85,113.28-22.88,168.9-38.84,30.2-8.66,59-6.17,87.09,7.5,22.43,10.89,48,26.93,60.65,49.24V120Z"
+                    opacity=".5"
+                    fill="#F2EBE5"
+                ></path>
+
+                <path
+                    d="M0,120V114.37C149.93,61,314.09,48.68,475.83,77.43c43,7.64,84.23,20.12,127.61,26.46,59,8.63,112.48-12.24,165.56-35.4C827.93,42.78,886,24.76,951.2,30c86.53,7,172.46,45.71,248.8,84.81V120Z"
+                    fill="#F2EBE5"
+                ></path>
+            </svg>
+
+        </div>
+
+
+        <!-- ======================================================
+             SERVICES
+        ======================================================= -->
+
+        <section
+            id="services-section"
+            class="py-20"
+            style="background-color:#F2EBE5;"
+        >
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                <div class="text-center max-w-3xl mx-auto mb-16">
+
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                        לכן יצרתי 3 דרכים שונות לעבוד איתי:
+                    </h2>
+
+                    <p class="text-xl text-brand-dark/70">
+                        בחרי את המסלול המדויק עבורך להתחלת השינוי.
+                    </p>
+
+                </div>
+
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+
+                    <!-- Service 1 -->
+                    <article class="bg-white rounded-3xl p-8 shadow-card flex flex-col h-full relative overflow-hidden group border border-white">
+
+                        <div
+                            class="absolute top-0 right-0 w-32 h-32 bg-brand-powder rounded-bl-full opacity-50 group-hover:scale-110 transition duration-500"
+                            aria-hidden="true"
+                        ></div>
+
+                        <div class="relative z-10 flex-grow">
+
+                            <div class="w-16 h-16 bg-brand-powder rounded-2xl flex items-center justify-center mb-6">
+                                <span class="text-3xl" aria-hidden="true">🗺️</span>
+                            </div>
+
+                            <h3 class="text-2xl font-bold font-serif mb-4">
+                                מפות היופי
+                            </h3>
+
+                            <p class="text-brand-dark/80 mb-6 leading-relaxed">
+
+                                <strong>
+                                    לגלות מה נכון לך אישית ללבוש
+                                </strong>
+
+                                <br>
+
+                                אם את מרגישה שאת עדיין מחפשת את הסגנון שלך,
+                                מתלבטת אילו צבעים מחמיאים לך או רוצה להבין
+                                מה באמת מתאים <strong>לך</strong> כאן מתחילים.
+
+                                <br><br>
+
+                                מפות היופי הן תהליך גילוי אישי שמחבר בין
+                                עולם הסטיילינג לעולם הרוח ועוזר לך לגלות את
+
+                                <strong>
+                                    הסגנון, הצבעים, האיפור, התכשיטים ואבני החן
+                                </strong>
+
+                                שמתאימים לך.
+
+                                <br><br>
+
+                                המטרה היא שתפסיקי לנחש ותתחילי להבין
+                                מה גורם לך להרגיש
+
+                                <strong>
+                                    יפה, זוהרת ומדויקת לעצמך.
+                                </strong>
+
+                            </p>
+
+                        </div>
+
+                        <div class="mt-8 relative z-10">
+
+                            <a
+                                href="https://dress-from-you-2hl5a.landy-ai.com/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="block w-full text-center bg-brand-powder text-brand-fuchsia hover:bg-brand-fuchsia hover:text-white transition py-4 rounded-xl font-bold border border-brand-fuchsia/20"
+                            >
+                                אני רוצה לגלות את מפות היופי שלי
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Service 2 -->
+                    <article class="bg-white rounded-3xl p-8 shadow-soft transform md:-translate-y-4 flex flex-col h-full relative overflow-hidden group border-2 border-brand-baby">
+
+                        <div
+                            class="absolute top-0 inset-x-0 h-2 bg-brand-fuchsia"
+                            aria-hidden="true"
+                        ></div>
+
+                        <div class="relative z-10 flex-grow">
+
+                            <div class="w-16 h-16 bg-brand-baby/30 rounded-2xl flex items-center justify-center mb-6">
+                                <span class="text-3xl" aria-hidden="true">👗</span>
+                            </div>
+
+                            <h3 class="text-2xl font-bold font-serif mb-4">
+                                תוכנית 'ארון מנצח'
+                            </h3>
+
+                            <p class="text-brand-dark/80 mb-6 leading-relaxed">
+
+                                <strong>
+                                    ללמוד איך לבנות ולנהל ארון שעובד בשבילך בפועל
+                                </strong>
+
+                                <br>
+
+                                את כבר יודעת שאת רוצה שינוי,
+                                אבל בכל בוקר את עדיין עומדת מול ארון מלא וחושבת:
+
+                                <br>
+
+                                <strong>"אין לי מה ללבוש..."?</strong>
+
+                                <br><br>
+
+                                ארון מנצח נועד ללמד אותך איך להפוך
+                                את הארון שלך למשהו שבאמת משרת אותך.
+
+                                <br><br>
+
+                                איך לבחור נכון, איך ליצור שילובים,
+                                איך להפסיק לקנות פריטים שלא עובדים עבורך
+                                ואיך לבנות ארון שיחסוך לך
+
+                                <strong>זמן, כסף ואנרגיה.</strong>
+
+                                <br><br>
+
+                                כאן את לא רק מגלה מה נכון לך —
+
+                                <br>
+
+                                <strong>
+                                    את לומדת לעשות את זה בעצמך.
+                                </strong>
+
+                            </p>
+
+                        </div>
+
+                        <div class="mt-8 relative z-10">
+
+                            <a
+                                href="https://release-blocks-48h53.landy-ai.com"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="block w-full text-center bg-brand-fuchsia text-white hover:bg-opacity-90 transition py-4 rounded-xl font-bold shadow-md"
+                            >
+                                אני רוצה ארון שעובד בשבילי
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Service 3 -->
+                    <article class="bg-white rounded-3xl p-8 shadow-card flex flex-col h-full relative overflow-hidden group border border-white">
+
+                        <div
+                            class="absolute top-0 right-0 w-32 h-32 bg-brand-powder rounded-bl-full opacity-50 group-hover:scale-110 transition duration-500"
+                            aria-hidden="true"
+                        ></div>
+
+                        <div class="relative z-10 flex-grow">
+
+                            <div class="w-16 h-16 bg-brand-powder rounded-2xl flex items-center justify-center mb-6">
+                                <span class="text-3xl" aria-hidden="true">✨</span>
+                            </div>
+
+                            <h3 class="text-2xl font-bold font-serif mb-4">
+                                ייעוץ סטיילינג אישי
+                            </h3>
+
+                            <p class="text-brand-dark/80 mb-6 leading-relaxed">
+
+                                <strong>
+                                    לעשות את השינוי ביחד איתי יד ביד
+                                </strong>
+
+                                <br>
+
+                                אם את לא רוצה לעשות את הדרך לבד
+                                ורוצה ליווי אישי ומקצועי,
+                                זה המסלול עבורך.
+
+                                <br><br>
+
+                                זהו תהליך <strong>אחד על אחד</strong>,
+                                שבו אנחנו עוברות יחד מהאבחון האישי,
+                                דרך הארון שלך ועד לקניות ממוקדות.
+
+                                <br><br>
+
+                                אני עוזרת לך להבין מה נכון לך,
+                                להיפרד ממה שכבר לא משרת אותך,
+                                להשלים את מה שחסר ולבנות סגנון וארון
+                                שבאמת עובדים בשבילך.
+
+                                <br><br>
+
+                                בלי לנחש ובלי לעשות את זה לבד.
+
+                            </p>
+
+                        </div>
+
+                        <div class="mt-8 relative z-10">
+
+                            <a
+                                href="https://discover-your-w3he6.landy-ai.com"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="block w-full text-center bg-brand-powder text-brand-fuchsia hover:bg-brand-fuchsia hover:text-white transition py-4 rounded-xl font-bold border border-brand-fuchsia/20"
+                            >
+                                אני רוצה לעבור את השינוי יחד איתך
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================================
+             WHICH SERVICE?
+        ======================================================= -->
+
+        <section
+            class="py-16 px-4 text-center"
+            style="background-color:#F2EBE5;"
+        >
+
+            <div class="max-w-3xl mx-auto">
+
+                <h2 class="text-2xl md:text-3xl font-serif text-brand-fuchsia mb-4 font-bold">
+                    עדיין מתלבטת מה מתאים לך?
+                </h2>
+
+                <p class="text-lg leading-loose">
+
+                    אפשר לחשוב על זה ככה:
+
+                    <br>
+
+                    <strong>מפות היופי</strong>
+                    → אני רוצה
+                    <strong>לגלות מה נכון לי.</strong>
+
+                    <br>
+
+                    <strong>ארון מנצח</strong>
+                    → אני רוצה
+                    <strong>ללמוד לעשות את זה בעצמי.</strong>
+
+                    <br>
+
+                    <strong>ייעוץ סטיילינג אישי</strong>
+                    → אני רוצה
+                    <strong>לעשות את השינוי יחד עם ספיר.</strong>
+
+                    <br><br>
+
+                    שלוש דרכים שונות עם מטרה אחת:
+
+                    <br>
+
+                    <strong>
+                        שתרגישי שהארון שלך סוף סוף מדבר את מי שאת מבפנים. 💗
+                    </strong>
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <div class="divider" style="background:#F2EBE5;" aria-hidden="true">
+
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 1200 120"
+                preserveAspectRatio="none"
+            >
+                <path
+                    d="M0 0L1200 103.52L1200 120L0 120Z"
+                    fill="#FDFBF7"
+                ></path>
+            </svg>
+
+        </div>
+
+
+        <!-- ======================================================
+             TESTIMONIALS
+        ======================================================= -->
+
+        <section
+            id="testimonials-section"
+            class="py-20"
+            style="background-color:#FDFBF7;"
+        >
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                <div class="text-center mb-16">
+
+                    <h2 class="text-4xl md:text-5xl font-bold font-serif text-brand-fuchsia mb-4">
+                        הנשים שכבר התחילו להסתכל אחרת על מה שהן לובשות
+                    </h2>
+
+                    <p class="text-xl">
+                        הסיפורים שלהן הם ההוכחה שזה אפשרי.
+                    </p>
+
+                </div>
+
+
+                <!-- Testimonial video -->
+                <div class="max-w-3xl mx-auto mb-20">
+
+                    <div class="bg-white p-6 rounded-3xl shadow-card border border-brand-beige">
+
+                        <div class="aspect-video">
+
+                            <iframe
+                                width="100%"
+                                height="100%"
+                                src="https://www.youtube.com/embed/3O20ksp5VO0"
+                                title="המלצה על ספיר סרוסי"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"
+                                style="border:0;border-radius:12px;"
+                            ></iframe>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Client images -->
+                <div class="mb-20">
+
+                    <div class="relative z-10 text-center p-8 bg-white/80 backdrop-blur-sm rounded-2xl">
+
+                        <h3 class="text-xl font-bold">
+                            איך הלקוחות שלי נראות אחרי התהליך ומה הן מספרות
+                        </h3>
+
+                    </div>
+
+
+                    <div class="w-full bg-white rounded-3xl overflow-hidden relative shadow-inner p-4">
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+
+                            <img
+                                src="https://media.landy-ai.com/Landy-Media/6a00b470fcdd04981ae34f86/8a90xnns85-4877.jpeg"
+                                alt="לקוחה אחרי תהליך סטיילינג 1"
+                                loading="lazy"
+                                class="w-full rounded-xl"
+                            >
+
+                            <img
+                                src="https://media.landy-ai.com/Landy-Media/6a00b470fcdd04981ae34f86/sues58ujd8-6714.jpeg"
+                                alt="לקוחה אחרי תהליך סטיילינג 2"
+                                loading="lazy"
+                                class="w-full rounded-xl"
+                            >
+
+                            <img
+                                src="https://media.landy-ai.com/Landy-Media/6a00b470fcdd04981ae34f86/mq0wdyam6h-4265.jpeg"
+                                alt="לקוחה אחרי תהליך סטיילינג 3"
+                                loading="lazy"
+                                class="w-full rounded-xl"
+                            >
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 4 image grid -->
+                <div class="grid grid-cols-2 gap-6">
+
+                    <div class="bg-brand-beige rounded-2xl overflow-hidden">
+
+                        <img
+                            src="https://media.landy-ai.com/Landy-Media/6a00b470fcdd04981ae34f86/6ron9x6nec-2676.jpeg"
+                            alt="לקוחה לאחר תהליך סטיילינג"
+                            loading="lazy"
+                            class="w-full h-auto block"
+                        >
+
+                    </div>
+
+
+                    <div class="bg-brand-beige rounded-2xl overflow-hidden">
+
+                        <img
+                            src="https://media.landy-ai.com/Landy-Media/6a00b470fcdd04981ae34f86/50kn47xo74-6074.jpeg"
+                            alt="לקוחה לאחר תהליך סטיילינג"
+                            loading="lazy"
+                            class="w-full h-auto block"
+                        >
+
+                    </div>
+
+
+                    <div class="bg-brand-beige rounded-2xl overflow-hidden">
+
+                        <img
+                            src="https://media.landy-ai.com/Landy-Media/6a00b470fcdd04981ae34f86/7plkywkpcg-5225.jpeg"
+                            alt="לקוחה לאחר תהליך סטיילינג"
+                            loading="lazy"
+                            class="w-full h-auto block"
+                        >
+
+                    </div>
+
+
+                    <div class="bg-brand-beige rounded-2xl overflow-hidden">
+
+                        <img
+                            src="https://media.landy-ai.com/Landy-Media/6a00b470fcdd04981ae34f86/93f77bj3bj-9039.jpg"
+                            alt="לקוחה לאחר תהליך סטיילינג"
+                            loading="lazy"
+                            class="w-full h-auto block"
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Divider -->
+        <div class="divider" style="background:#FDFBF7;" aria-hidden="true">
+
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 1200 120"
+                preserveAspectRatio="none"
+            >
+                <path
+                    d="M600,7.23C268.63,7.23,0,54.48,0,112.77V120H1200V112.77C1200,54.48,931.37,7.23,600,7.23Z"
+                    fill="#FCEBEE"
+                ></path>
+            </svg>
+
+        </div>
+
+
+        <!-- ======================================================
+             LINKS / CONTACT
+        ======================================================= -->
+
+        <section
+            id="linktree-section"
+            class="py-24 relative overflow-hidden"
+            style="background-color:#FCEBEE;"
+        >
+
+            <div
+                class="absolute top-10 left-10 w-64 h-64 bg-white opacity-40 rounded-full blur-3xl"
+                aria-hidden="true"
+            ></div>
+
+            <div
+                class="absolute bottom-10 right-10 w-64 h-64 bg-brand-baby opacity-40 rounded-full blur-3xl"
+                aria-hidden="true"
+            ></div>
+
+
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 relative z-10">
+
+
+                <!-- Intro video -->
+                <div class="text-center mb-10">
+
+                    <h2 class="text-xl font-bold mb-4">
+                        רוצה להכיר אותי קצת יותר?
+                    </h2>
+
+                    <div class="aspect-[9/16] shadow-card rounded-2xl overflow-hidden max-w-xs mx-auto">
+
+                        <iframe
+                            src="https://www.youtube.com/embed/fi90Kag9FAs"
+                            title="ספיר סרוסי - הדרך שלי"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            style="width:100%;height:100%;display:block;border:0;"
+                        ></iframe>
+
+                    </div>
+
+                    <p class="text-center mt-6 font-serif text-2xl text-brand-fuchsia leading-relaxed italic">
+                        בסרטון הקצר הזה אני מספרת מי אני,
+                        איך נולד החיבור בין סטיילינג לעולם הרוח
+                        ולמה אני מאמינה שהבגדים שלנו יכולים להיות
+                        הרבה יותר מסתם בגדים.
+                    </p>
+
+                </div>
+
+
+                <div class="text-center mb-10">
+
+                    <img
+                        src="https://media.landy-ai.com/Landy-Media/6a00b470fcdd04981ae34f86/fm63r93euz-6698.jpg"
+                        alt="ספיר סרוסי"
+                        width="120"
+                        height="120"
+                        loading="lazy"
+                        class="w-28 h-28 rounded-full mx-auto mb-6 object-cover border-4 border-white shadow-soft"
+                    >
+
+                    <h2 class="text-4xl md:text-5xl font-bold font-serif mb-4">
+                        אז מאיפה את רוצה להתחיל? 💗
+                    </h2>
+
+                    <p class="text-xl">
+                        בחרי את הדרך שהכי מתאימה לך עכשיו:
+                    </p>
+
+                </div>
+
+
+                <!-- CTA buttons -->
+                <div class="flex flex-col gap-4 mb-16">
+
+                    <a
+                        href="https://dress-from-you-2hl5a.landy-ai.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="linktree-btn block w-full bg-white text-center py-5 px-6 rounded-2xl shadow-sm border border-brand-baby text-lg font-bold text-brand-dark hover:text-brand-fuchsia group"
+                    >
+                        <span
+                            class="inline-block transform group-hover:scale-110 transition ml-2"
+                            aria-hidden="true"
+                        >
+                            🗺️
+                        </span>
+
+                        בואי תגלי את מפות היופי שלי ומה נכון לך ללבוש
+                    </a>
+
+
+                    <a
+                        href="https://release-blocks-48h53.landy-ai.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="linktree-btn block w-full bg-brand-fuchsia text-center py-5 px-6 rounded-2xl shadow-md text-lg font-bold text-white group"
+                    >
+                        <span
+                            class="inline-block transform group-hover:scale-110 transition ml-2"
+                            aria-hidden="true"
+                        >
+                            👗
+                        </span>
+
+                        הצטרפי לתוכנית "ארון מנצח" ותלמדי לבנות ולנהל ארון שעובד בשבילך
+                    </a>
+
+
+                    <a
+                        href="https://discover-your-w3he6.landy-ai.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="linktree-btn block w-full bg-white text-center py-5 px-6 rounded-2xl shadow-sm border border-brand-baby text-lg font-bold text-brand-dark hover:text-brand-fuchsia group"
+                    >
+                        <span
+                            class="inline-block transform group-hover:scale-110 transition ml-2"
+                            aria-hidden="true"
+                        >
+                            ✨
+                        </span>
+
+                        קבעי ייעוץ סטיילינג אישי ובואי לעשות את השינוי יד ביד יחד איתי
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ======================================================
+         FOOTER
+    ======================================================= -->
+
+    <footer class="bg-brand-dark text-white py-12 text-center">
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="mb-8">
+
+                <span class="font-serif text-4xl font-bold text-brand-powder">
+                    Sapir sarussi
+                </span>
+
+            </div>
+
+
+            <nav
+                class="flex flex-wrap justify-center gap-6 mb-8 text-white/80"
+                aria-label="קישורים בתחתית האתר"
+            >
+
+                <a
+                    href="https://your-trust-our-a33o5.landy-ai.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="hover:text-brand-powder transition"
+                >
+                    תקנון האתר
+                </a>
+
+
+                <a
+                    href="https://your-trust-our-a33o5.landy-ai.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="hover:text-brand-powder transition"
+                >
+                    מדיניות פרטיות
+                </a>
+
+
+                <!-- שנה לכתובת האמיתית כאשר עמוד הנגישות קיים -->
+                <a
+                    href="/accessibility.html"
+                    class="hover:text-brand-powder transition"
+                >
+                    הצהרת נגישות
+                </a>
+
+
+                <a
+                    href="#linktree-section"
+                    class="hover:text-brand-powder transition"
+                >
+                    יצירת קשר
+                </a>
+
+            </nav>
+
+
+            <p class="text-white/60 text-sm mb-4">
+                © 2026 כל הזכויות שמורות לספיר סרוסי - סטיילינג רוחני.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ======================================================
+         WHATSAPP
+         כרגע # כי לא סופק מספר WhatsApp בקוד
+    ======================================================= -->
+
+    <a
+        href="#"
+        class="fixed bottom-6 right-6 lg:bottom-10 lg:right-10 bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:scale-110 transition z-40 flex items-center justify-center w-16 h-16"
+        aria-label="שלחי הודעה בוואטסאפ"
+    >
+        <svg
+            fill="currentColor"
+            viewBox="0 0 32 32"
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-10 h-10"
+            aria-hidden="true"
+        >
+            <path d="M26.576 5.363c-2.69-2.69-6.406-4.354-10.511-4.354-8.209 0-14.865 6.655-14.865 14.865 0 2.732.737 5.291 2.022 7.491l-0.038-0.070-2.109 7.702 7.879-2.067c2.051 1.139 4.498 1.809 7.102 1.809h0.006c8.209-0.003 14.862-6.659 14.862-14.868 0-4.103-1.662-7.817-4.349-10.507l0 0zM16.062 28.228h-0.005c-2.319 0-4.489-.64-6.342-1.753l.056.031-0.451-.267-4.675 1.227 1.247-4.559-.294-.467c-1.185-1.862-1.889-4.131-1.889-6.565 0-6.822 5.531-12.353 12.353-12.353s12.353 5.531 12.353 12.353c0 6.822-5.53 12.353-12.353 12.353zM22.838 18.977c-.371-.186-2.197-1.083-2.537-1.208-.341-.124-.589-.185-.837.187-.246.371-.958 1.207-1.175 1.455-.216.249-.434.279-.805.094-1.15-.466-2.138-1.087-2.997-1.852l.010.009c-.799-.74-1.484-1.587-2.037-2.521l-.028-.052c-.216-.371-.023-.572.162-.757.167-.166.372-.434.557-.65.146-.179.271-.384.366-.604l.006-.017c.043-.087.068-.188.068-.296 0-.131-.037-.253-.101-.357l.002.003c-.094-.186-.836-2.014-1.145-2.758-.302-.724-.609-.625-.836-.637-.216-.010-.464-.012-.712-.012-.395.010-.746.188-.988.463l-.001.002c-.802.761-1.3 1.834-1.3 3.023 0 .026 0 .053.001.079 0 1.467.681 2.784 1.527 3.857 1.604 2.379 3.742 4.282 6.251 5.564.548.248 1.25.513 1.968.74.442.14.951.221 1.479.221.303 0 .601-.027.889-.078 1.069-.223 1.956-.868 2.497-1.749.165-.366.261-.793.261-1.242 0-.185-.016-.366-.047-.542-.092-.155-.34-.247-.712-.434z"></path>
+        </svg>
+    </a>
+
+
+    <!-- ======================================================
+         MOBILE MENU
+    ======================================================= -->
+
+    <script>
+        (function () {
+            const button = document.getElementById('mobile-menu-button');
+            const menu = document.getElementById('mobile-menu');
+
+            if (!button || !menu) return;
+
+            button.addEventListener('click', function () {
+                const isOpen = !menu.classList.contains('hidden');
+
+                menu.classList.toggle('hidden');
+
+                button.setAttribute(
+                    'aria-expanded',
+                    isOpen ? 'false' : 'true'
+                );
+
+                button.setAttribute(
+                    'aria-label',
+                    isOpen ? 'פתיחת תפריט' : 'סגירת תפריט'
+                );
+            });
+
+            document.querySelectorAll('.mobile-nav-link').forEach(function (link) {
+                link.addEventListener('click', function () {
+                    menu.classList.add('hidden');
+                    button.setAttribute('aria-expanded', 'false');
+                    button.setAttribute('aria-label', 'פתיחת תפריט');
+                });
+            });
+        })();
+    </script>
+
+
+    <!-- ======================================================
+         ACCESSIBILITY
+         yAccessibility
+    ======================================================= -->
+
+    <script
+        src="https://cdn.jsdelivr.net/gh/yortem/yAccessibility@latest/yaccessibility.js"
+        defer
+    ></script>
+
+    <script defer>
+        (function () {
+
+            function initAccessibility() {
+
+                if (typeof yAccessibility === 'function') {
+
+                    yAccessibility({
+                        language: 'he',
+                        verticalPosition: 'bottom',
+
+                        /*
+                         * 120px משאיר את כפתור הנגישות
+                         * מעל כפתור ה-WhatsApp.
+                         */
+                        verticalOffset: 120
+                    });
+
+                    return;
+                }
+
+                /*
+                 * אם הספרייה עדיין לא סיימה להיטען,
+                 * ננסה שוב.
+                 */
+                setTimeout(initAccessibility, 100);
+            }
+
+            if (document.readyState === 'loading') {
+
+                document.addEventListener(
+                    'DOMContentLoaded',
+                    initAccessibility
+                );
+
+            } else {
+
+                initAccessibility();
+
+            }
+
+        })();
+    </script>
+
+</body>
+</html>

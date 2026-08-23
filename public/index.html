@@ -1,0 +1,2460 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="גלי את צבע המזל והבגדים המדויקים לאנרגיה שלך לפי תאריך הלידה. מפת סטייל אישית במתנה.">
+
+    <meta name="theme-color" content="#d81b60">
+
+    <!-- Open Graph -->
+    <meta property="og:title"
+        content="מפת קוד הסטייל האנרגטי שלך - במתנה">
+
+    <meta property="og:description"
+        content="גלי את צבע המזל והבגדים המדויקים לאנרגיה שלך לפי תאריך הלידה. מפת סטייל אישית במתנה.">
+
+    <meta property="og:image"
+        content="https://images.unsplash.com/photo-1557777586-f6682739fcf3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080">
+
+    <title>מפת קוד הסטייל האנרגטי שלך</title>
+
+
+    <!-- ==================================================
+         GOOGLE FONTS
+    ================================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700;800&family=Heebo:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+
+    <!-- ==================================================
+         BOOTSTRAP RTL
+    ================================================== -->
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css"
+        rel="stylesheet">
+
+
+    <!-- ==================================================
+         BOOTSTRAP ICONS
+    ================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+    <!-- ==================================================
+         CUSTOM CSS
+    ================================================== -->
+
+    <style>
+
+        :root {
+
+            --brand-light: #fff0f5;
+            --brand-pink: #fce4ec;
+            --brand-accent: #c28e92;
+            --brand-fuchsia: #d81b60;
+            --brand-gold: #d4af37;
+            --brand-dark: #2c1e22;
+            --brand-text: #4a3b3e;
+            --brand-heading: #3d2b2f;
+
+        }
+
+
+        /* ==================================================
+           GENERAL
+        ================================================== */
+
+        html {
+
+            scroll-behavior: smooth;
+
+        }
+
+
+        body {
+
+            margin: 0;
+
+            overflow-x: hidden;
+
+            background: var(--brand-light);
+
+            color: var(--brand-text);
+
+            font-family: 'Assistant', sans-serif;
+
+            -webkit-font-smoothing: antialiased;
+
+        }
+
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+
+            font-family: 'Heebo', sans-serif;
+
+            color: var(--brand-heading);
+
+        }
+
+
+        strong {
+
+            color: var(--brand-fuchsia);
+
+            font-weight: 800;
+
+        }
+
+
+        section {
+
+            position: relative;
+
+        }
+
+
+        /* ==================================================
+           NAVBAR
+        ================================================== */
+
+        .navbar-custom {
+
+            background: rgba(255, 255, 255, 0.95);
+
+            backdrop-filter: blur(12px);
+
+            -webkit-backdrop-filter: blur(12px);
+
+            border-bottom: 1px solid rgba(216, 27, 96, 0.08);
+
+            box-shadow: 0 5px 25px rgba(61, 43, 47, 0.05);
+
+            padding: 12px 0;
+
+        }
+
+
+        .navbar-brand {
+
+            color: var(--brand-heading) !important;
+
+            font-family: 'Heebo', sans-serif;
+
+            font-size: 1.35rem;
+
+        }
+
+
+        .navbar-brand i {
+
+            color: var(--brand-gold);
+
+        }
+
+
+        .nav-link {
+
+            color: var(--brand-text) !important;
+
+            font-weight: 600;
+
+            margin: 0 7px;
+
+            transition: 0.3s ease;
+
+        }
+
+
+        .nav-link:hover {
+
+            color: var(--brand-fuchsia) !important;
+
+        }
+
+
+        .btn-navbar-custom {
+
+            background: var(--brand-fuchsia);
+
+            color: white;
+
+            border-radius: 30px;
+
+            padding: 10px 22px;
+
+            font-weight: 700;
+
+            border: none;
+
+            transition: all 0.3s ease;
+
+        }
+
+
+        .btn-navbar-custom:hover {
+
+            background: #b71551;
+
+            color: white;
+
+            transform: translateY(-2px);
+
+            box-shadow: 0 8px 20px rgba(216, 27, 96, 0.2);
+
+        }
+
+
+        /* ==================================================
+           HERO
+        ================================================== */
+
+        .hero-section {
+
+            background: var(--brand-light);
+
+            padding: 145px 0 100px;
+
+            overflow: hidden;
+
+        }
+
+
+        .hero-section::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 420px;
+
+            height: 420px;
+
+            border-radius: 50%;
+
+            background: var(--brand-pink);
+
+            top: -150px;
+
+            right: -100px;
+
+            filter: blur(60px);
+
+            opacity: 0.75;
+
+            animation: float 7s ease-in-out infinite;
+
+        }
+
+
+        .hero-section::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 350px;
+
+            height: 350px;
+
+            border-radius: 50%;
+
+            background: white;
+
+            bottom: -150px;
+
+            left: -100px;
+
+            filter: blur(70px);
+
+            opacity: 0.9;
+
+        }
+
+
+        .hero-container {
+
+            position: relative;
+
+            z-index: 2;
+
+        }
+
+
+        .hero-title {
+
+            font-size: clamp(2.5rem, 5vw, 4.7rem);
+
+            line-height: 1.15;
+
+            font-weight: 900;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .hero-description {
+
+            font-size: clamp(1.15rem, 2vw, 1.4rem);
+
+            line-height: 1.8;
+
+            max-width: 650px;
+
+            margin-bottom: 30px;
+
+        }
+
+
+        .promo-badge {
+
+            display: inline-block;
+
+            background: rgba(255, 255, 255, 0.85);
+
+            border: 1px solid var(--brand-pink);
+
+            border-radius: 18px;
+
+            padding: 13px 20px;
+
+            color: var(--brand-heading);
+
+            font-weight: 600;
+
+            line-height: 1.7;
+
+            box-shadow: 0 10px 30px rgba(216, 27, 96, 0.07);
+
+        }
+
+
+        .highlight-pink {
+
+            color: var(--brand-fuchsia);
+
+        }
+
+
+        /* ==================================================
+           REGISTRATION CARD
+        ================================================== */
+
+        .registration-wrapper {
+
+            position: relative;
+
+        }
+
+
+        .registration-card {
+
+            background: white;
+
+            border-radius: 32px;
+
+            padding: 35px;
+
+            border: 1px solid var(--brand-pink);
+
+            box-shadow:
+                0 25px 60px rgba(216, 27, 96, 0.15);
+
+            position: relative;
+
+        }
+
+
+        .registration-star {
+
+            position: absolute;
+
+            top: -25px;
+
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            width: 52px;
+
+            height: 52px;
+
+            border-radius: 50%;
+
+            background: white;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border: 1px solid var(--brand-light);
+
+            box-shadow: 0 8px 20px rgba(61, 43, 47, 0.1);
+
+            z-index: 5;
+
+        }
+
+
+        .registration-star i {
+
+            color: var(--brand-gold);
+
+            font-size: 22px;
+
+        }
+
+
+        .form-label {
+
+            color: var(--brand-heading);
+
+            font-weight: 700;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        .required {
+
+            color: #dc3545;
+
+        }
+
+
+        .custom-input {
+
+            background: #fafafa;
+
+            border: 1px solid #e5e5e5;
+
+            border-radius: 14px;
+
+            padding: 13px 16px;
+
+            min-height: 52px;
+
+            color: var(--brand-text);
+
+            transition: all 0.3s ease;
+
+        }
+
+
+        .custom-input:focus {
+
+            border-color: var(--brand-fuchsia);
+
+            box-shadow: 0 0 0 4px rgba(216, 27, 96, 0.1);
+
+            background: white;
+
+        }
+
+
+        .privacy-check {
+
+            margin-top: 5px;
+
+        }
+
+
+        .privacy-check .form-check-input {
+
+            width: 18px;
+
+            height: 18px;
+
+            cursor: pointer;
+
+        }
+
+
+        .privacy-check .form-check-input:checked {
+
+            background-color: var(--brand-fuchsia);
+
+            border-color: var(--brand-fuchsia);
+
+        }
+
+
+        .privacy-check a {
+
+            color: var(--brand-heading);
+
+        }
+
+
+        .privacy-check a:hover {
+
+            color: var(--brand-fuchsia) !important;
+
+        }
+
+
+        .btn-submit-pink {
+
+            border: none;
+
+            background: linear-gradient(
+                90deg,
+                var(--brand-fuchsia),
+                #e0115f
+            );
+
+            color: white;
+
+            font-weight: 800;
+
+            font-size: 1.2rem;
+
+            padding: 15px 20px;
+
+            border-radius: 14px;
+
+            box-shadow: 0 10px 25px rgba(216, 27, 96, 0.25);
+
+            transition: all 0.3s ease;
+
+        }
+
+
+        .btn-submit-pink:hover {
+
+            color: white;
+
+            transform: translateY(-3px);
+
+            box-shadow: 0 15px 30px rgba(216, 27, 96, 0.3);
+
+        }
+
+
+        .security-note {
+
+            color: #999;
+
+        }
+
+
+        .security-note i {
+
+            color: var(--brand-fuchsia);
+
+        }
+
+
+        .form-message {
+
+            padding: 12px 15px;
+
+            border-radius: 12px;
+
+            font-weight: 600;
+
+            line-height: 1.6;
+
+        }
+
+
+        /* ==================================================
+           MOBILE HERO ARROW
+        ================================================== */
+
+        .mobile-arrow {
+
+            width: 48px;
+
+            height: 48px;
+
+            border-radius: 50%;
+
+            background: var(--brand-fuchsia);
+
+            color: white;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-decoration: none;
+
+            animation: bounce 2s infinite;
+
+        }
+
+
+        /* ==================================================
+           DIVIDERS
+        ================================================== */
+
+        .divider {
+
+            width: 100%;
+
+            line-height: 0;
+
+            overflow: hidden;
+
+            display: block;
+
+        }
+
+
+        .divider svg {
+
+            display: block;
+
+            width: 100%;
+
+            height: 90px;
+
+        }
+
+
+        /* ==================================================
+           SHOWCASE
+        ================================================== */
+
+        .showcase-section {
+
+            background: white;
+
+            padding: 100px 0;
+
+        }
+
+
+        .section-title {
+
+            font-size: clamp(2rem, 4vw, 3rem);
+
+            font-weight: 800;
+
+        }
+
+
+        .gold-line {
+
+            width: 90px;
+
+            height: 5px;
+
+            background: var(--brand-gold);
+
+            border-radius: 20px;
+
+            margin: 20px auto 60px;
+
+        }
+
+
+        .showcase-image-wrapper {
+
+            position: relative;
+
+            padding: 20px;
+
+        }
+
+
+        .showcase-image-wrapper::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background: var(--brand-light);
+
+            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+
+            transform: rotate(8deg);
+
+            opacity: 0.7;
+
+        }
+
+
+        .showcase-image {
+
+            position: relative;
+
+            z-index: 2;
+
+            width: 100%;
+
+            border-radius: 25px;
+
+            border: 5px solid white;
+
+            box-shadow: 0 20px 50px rgba(61, 43, 47, 0.15);
+
+            transition: transform 0.5s ease;
+
+        }
+
+
+        .showcase-image:hover {
+
+            transform: scale(1.02);
+
+        }
+
+
+        .floating-badge {
+
+            position: absolute;
+
+            bottom: -10px;
+
+            right: -5px;
+
+            background: white;
+
+            border: 1px solid var(--brand-pink);
+
+            padding: 14px 18px;
+
+            border-radius: 15px;
+
+            box-shadow: 0 15px 30px rgba(61, 43, 47, 0.15);
+
+            z-index: 4;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            animation: float 5s ease-in-out infinite;
+
+        }
+
+
+        .floating-icon {
+
+            width: 42px;
+
+            height: 42px;
+
+            background: var(--brand-light);
+
+            color: var(--brand-fuchsia);
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+        }
+
+
+        .showcase-text {
+
+            font-size: 1.2rem;
+
+            line-height: 2;
+
+        }
+
+
+        /* ==================================================
+           TESTIMONIALS
+        ================================================== */
+
+        .testimonials-section {
+
+            background: #fdf5f6;
+
+            padding: 80px 0 100px;
+
+        }
+
+
+        .testimonial-image {
+
+            width: 100%;
+
+            display: block;
+
+            border-radius: 20px;
+
+            border: 1px solid var(--brand-light);
+
+            box-shadow: 0 10px 30px rgba(61, 43, 47, 0.06);
+
+            transition: all 0.4s ease;
+
+        }
+
+
+        .testimonial-image:hover {
+
+            transform: translateY(-5px);
+
+            box-shadow: 0 20px 40px rgba(61, 43, 47, 0.12);
+
+        }
+
+
+        .testimonial-card {
+
+            overflow: hidden;
+
+            border-radius: 20px;
+
+        }
+
+
+        /* ==================================================
+           CREATOR
+        ================================================== */
+
+        .creator-section {
+
+            background: var(--brand-pink);
+
+            padding: 100px 0;
+
+        }
+
+
+        .creator-image-wrapper {
+
+            position: relative;
+
+            max-width: 450px;
+
+            margin: auto;
+
+        }
+
+
+        .creator-image-wrapper::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: -15px;
+
+            background: rgba(255, 255, 255, 0.45);
+
+            border-radius: 45px;
+
+            transform: rotate(3deg);
+
+        }
+
+
+        .creator-image {
+
+            position: relative;
+
+            z-index: 2;
+
+            width: 100%;
+
+            height: 500px;
+
+            object-fit: cover;
+
+            border-radius: 40px;
+
+            box-shadow: 0 20px 50px rgba(61, 43, 47, 0.15);
+
+        }
+
+
+        .creator-text {
+
+            font-size: 1.15rem;
+
+            line-height: 2;
+
+        }
+
+
+        /* ==================================================
+           FINAL CTA
+        ================================================== */
+
+        .final-cta {
+
+            background: var(--brand-light);
+
+            padding: 110px 0;
+
+            overflow: hidden;
+
+        }
+
+
+        .cta-card {
+
+            background: rgba(255, 255, 255, 0.75);
+
+            border: 1px solid white;
+
+            border-radius: 30px;
+
+            padding: 50px;
+
+            box-shadow: 0 20px 60px rgba(61, 43, 47, 0.1);
+
+            backdrop-filter: blur(10px);
+
+        }
+
+
+        .cta-title {
+
+            font-size: clamp(2rem, 5vw, 3.5rem);
+
+            font-weight: 900;
+
+        }
+
+
+        .benefits-box {
+
+            background: white;
+
+            border: 1px solid var(--brand-light);
+
+            border-radius: 20px;
+
+            padding: 30px;
+
+            box-shadow: 0 5px 20px rgba(61, 43, 47, 0.04);
+
+        }
+
+
+        .benefit-item {
+
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 12px;
+
+            margin-bottom: 18px;
+
+            font-size: 1.08rem;
+
+        }
+
+
+        .benefit-item:last-child {
+
+            margin-bottom: 0;
+
+        }
+
+
+        .benefit-icon {
+
+            flex-shrink: 0;
+
+            color: var(--brand-gold);
+
+            font-size: 22px;
+
+        }
+
+
+        .btn-final-cta {
+
+            display: inline-block;
+
+            text-decoration: none;
+
+            color: white;
+
+            background: linear-gradient(
+                90deg,
+                var(--brand-fuchsia),
+                #e0115f
+            );
+
+            font-size: 1.35rem;
+
+            font-weight: 800;
+
+            padding: 17px 40px;
+
+            border-radius: 50px;
+
+            box-shadow: 0 15px 35px rgba(216, 27, 96, 0.25);
+
+            transition: all 0.3s ease;
+
+        }
+
+
+        .btn-final-cta:hover {
+
+            color: white;
+
+            transform: translateY(-4px);
+
+            box-shadow: 0 20px 45px rgba(216, 27, 96, 0.3);
+
+        }
+
+
+        /* ==================================================
+           FOOTER
+        ================================================== */
+
+        .footer {
+
+            background: var(--brand-dark);
+
+            color: white;
+
+            padding: 50px 0;
+
+            border-top: 4px solid var(--brand-fuchsia);
+
+        }
+
+
+        .footer a {
+
+            color: rgba(255, 255, 255, 0.75);
+
+            text-decoration: none;
+
+            transition: 0.3s ease;
+
+        }
+
+
+        .footer a:hover {
+
+            color: white;
+
+        }
+
+
+        .footer-copyright {
+
+            color: rgba(255, 255, 255, 0.6);
+
+            font-size: 0.9rem;
+
+        }
+
+
+        /* ==================================================
+           ANIMATIONS
+        ================================================== */
+
+        @keyframes float {
+
+            0%,
+            100% {
+
+                transform: translateY(0);
+
+            }
+
+            50% {
+
+                transform: translateY(-15px);
+
+            }
+
+        }
+
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+
+                transform: translateY(0);
+
+            }
+
+            50% {
+
+                transform: translateY(8px);
+
+            }
+
+        }
+
+
+        /* ==================================================
+           RESPONSIVE
+        ================================================== */
+
+        @media (max-width: 991.98px) {
+
+            .hero-section {
+
+                padding-top: 120px;
+
+                padding-bottom: 80px;
+
+            }
+
+
+            .hero-description {
+
+                margin-left: auto;
+
+                margin-right: auto;
+
+            }
+
+
+            .registration-card {
+
+                padding: 28px 22px;
+
+            }
+
+
+            .showcase-section,
+            .creator-section,
+            .final-cta {
+
+                padding: 75px 0;
+
+            }
+
+        }
+
+
+        @media (max-width: 575.98px) {
+
+            .hero-section {
+
+                padding: 105px 0 60px;
+
+            }
+
+
+            .hero-title {
+
+                font-size: 2.4rem;
+
+            }
+
+
+            .hero-description {
+
+                font-size: 1.05rem;
+
+            }
+
+
+            .promo-badge {
+
+                font-size: 0.9rem;
+
+            }
+
+
+            .registration-card {
+
+                border-radius: 24px;
+
+                padding: 28px 18px;
+
+            }
+
+
+            .cta-card {
+
+                padding: 30px 20px;
+
+            }
+
+
+            .creator-image {
+
+                height: 400px;
+
+            }
+
+
+            .btn-final-cta {
+
+                width: 100%;
+
+                font-size: 1.15rem;
+
+            }
+
+
+            .floating-badge {
+
+                right: 0;
+
+                bottom: -20px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ==================================================
+         NAVBAR
+    ================================================== -->
+
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+
+        <div class="container">
+
+            <a class="navbar-brand fw-bold" href="/">
+
+                <i class="bi bi-stars"></i>
+
+               סטיילינג רוחני
+
+            </a>
+
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarMenu"
+                aria-controls="navbarMenu"
+                aria-expanded="false"
+                aria-label="פתיחת תפריט">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+
+            <div class="collapse navbar-collapse" id="navbarMenu">
+
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="/about">
+
+                            אודות
+
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="#showcase">
+
+                            המפה
+
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="#testimonials">
+
+                            המלצות
+
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="#creator">
+
+                            על ספיר
+
+                        </a>
+
+                    </li>
+
+                </ul>
+
+
+                <a
+                    href="#register"
+                    class="btn btn-navbar-custom">
+
+                    הרשמה עכשיו
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- ==================================================
+         HERO
+    ================================================== -->
+
+    <section class="hero-section">
+
+        <div class="container hero-container">
+
+            <div class="row align-items-center g-5">
+
+
+                <!-- HERO TEXT -->
+
+                <div class="col-lg-6 text-center text-lg-end">
+
+                    <div class="hero-content">
+
+
+                        <!-- <div class="promo-badge mb-4">
+
+                            לכבוד יום הולדתי אני שמחה להעניק לך
+                            את המפה במתנה.
+
+                            <br>
+
+                            ההטבה מוגבלת בזמן ותקפה למי שתירשם
+                            עד סוף יולי 2026.
+
+                        </div> -->
+
+
+                        <h1 class="hero-title">
+
+                            גלי את המבנה האנרגטי שלך
+
+                            <span class="highlight-pink">
+
+                                במתנה
+
+                            </span>
+
+                        </h1>
+
+
+                        <p class="hero-description">
+
+                            מפת המבנה האנרגטי שלך מגלה לך
+
+                            <strong>
+                                מה נכון לך ללבוש
+                            </strong>
+
+                            שמתאים לאנרגיה שלך לפי תאריך הלידה,
+
+                            <strong>
+                                ואיזה פריט לבוש ופריט איפור את חייבת בארון.
+                            </strong>
+
+                        </p>
+
+
+                        <!-- Mobile arrow -->
+
+                        <div class="d-block d-lg-none mt-4">
+
+                            <a
+                                href="#register"
+                                class="mobile-arrow"
+                                aria-label="מעבר לטופס ההרשמה">
+
+                                <i class="bi bi-arrow-down"></i>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ==================================================
+                     REGISTRATION FORM
+                     IMPORTANT:
+                     IDs MATCH index.js
+                ================================================== -->
+
+                <div
+                    class="col-lg-5 offset-lg-1"
+                    id="register">
+
+                    <div class="registration-wrapper">
+
+
+                        <div class="registration-star">
+
+                            <i class="bi bi-star-fill"></i>
+
+                        </div>
+
+
+                        <div class="registration-card">
+
+
+                            <form
+                                id="registerForm"
+                                novalidate>
+
+
+                                <!-- FORM TITLE -->
+
+                                <div class="text-center mb-4">
+
+                                    <h2
+                                        class="h4 fw-bold mb-2">
+
+                                        מלאי את הפרטים
+
+                                    </h2>
+
+                                    <p
+                                        class="text-muted mb-0">
+
+                                        ותקבלי את המפה עכשיו
+                                        ישירות למייל
+
+                                    </p>
+
+                                </div>
+
+
+
+                                <!-- Full Name -->
+
+                                <div class="form-group mb-3">
+
+                                    <label
+                                        for="fullName"
+                                        class="form-label">
+
+                                        שם מלא
+
+                                        <span class="required">
+                                            *
+                                        </span>
+
+                                    </label>
+
+
+                                    <input
+                                        type="text"
+                                        class="form-control custom-input"
+                                        id="fullName"
+                                        name="fullName"
+                                        autocomplete="name"
+                                        required>
+
+                                </div>
+
+
+
+                                <!-- Phone -->
+
+                                <div class="form-group mb-3">
+
+                                    <label
+                                        for="phone"
+                                        class="form-label">
+
+                                        מספר טלפון
+
+                                        <span class="required">
+                                            *
+                                        </span>
+
+                                    </label>
+
+
+                                    <input
+                                        type="tel"
+                                        class="form-control custom-input"
+                                        id="phone"
+                                        name="phone"
+                                        placeholder="050-1234567"
+                                        dir="ltr"
+                                        autocomplete="tel"
+                                        required>
+
+                                </div>
+
+
+
+                                <!-- Birth Date -->
+
+                                <div class="form-group mb-3">
+
+                                    <label
+                                        for="birthDate"
+                                        class="form-label">
+
+                                        תאריך לידה
+                                        (חובה להכנת המפה)
+
+                                        <span class="required">
+                                            *
+                                        </span>
+
+                                    </label>
+
+
+                                    <input
+                                        type="date"
+                                        class="form-control custom-input"
+                                        id="birthDate"
+                                        name="birthDate"
+                                        required>
+
+                                </div>
+
+
+
+                                <!-- Email -->
+
+                                <div class="form-group mb-3">
+
+                                    <label
+                                        for="email"
+                                        class="form-label">
+
+                                        כתובת מייל
+
+                                        <span class="required">
+                                            *
+                                        </span>
+
+                                    </label>
+
+
+                                    <input
+                                        type="email"
+                                        class="form-control custom-input"
+                                        id="email"
+                                        name="email"
+                                        placeholder="example@email.com"
+                                        dir="ltr"
+                                        autocomplete="email"
+                                        required>
+
+                                </div>
+
+
+
+                                <!-- Privacy -->
+
+                                <div
+                                    class="privacy-check d-flex align-items-start gap-2 mb-4">
+
+                                    <input
+                                        type="checkbox"
+                                        id="privacy"
+                                        name="privacy"
+                                        class="form-check-input mt-1"
+                                        required>
+
+
+                                    <label
+                                        for="privacy"
+                                        class="form-check-label small text-muted">
+
+                                        קראתי ואישרתי את
+
+                                        <a
+                                            href="/privacy.html"
+                                            class="text-decoration-none fw-medium">
+
+                                            מדיניות הפרטיות והתקנון
+
+                                        </a>
+
+                                        <span class="required">
+                                            *
+                                        </span>
+
+                                    </label>
+
+                                </div>
+
+
+
+                                <!-- Message -->
+
+                                <div
+                                    id="message"
+                                    class="form-message mb-3">
+
+                                </div>
+
+
+
+                                <!-- Submit -->
+
+                                <button
+                                    type="submit"
+                                    class="btn btn-submit-pink w-100">
+
+                                    אני רוצה את המפה שלי!
+
+                                </button>
+
+
+
+                                <!-- Security -->
+
+                                <div
+                                    class="security-note text-center mt-3 small">
+
+                                    <i class="bi bi-lock-fill me-1"></i>
+
+                                    הפרטים שלך מאובטחים ושמורים
+
+                                </div>
+
+
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         DIVIDER
+    ================================================== -->
+
+    <div
+        class="divider"
+        style="background:#fff0f5;">
+
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1200 120"
+            preserveAspectRatio="none">
+
+            <path
+                d="M600,7.23C268.63,7.23,0,54.48,0,112.77V120H1200V112.77C1200,54.48,931.37,7.23,600,7.23Z"
+                fill="#ffffff">
+            </path>
+
+        </svg>
+
+    </div>
+
+
+
+    <!-- ==================================================
+         PRODUCT SHOWCASE
+    ================================================== -->
+
+    <section
+        id="showcase"
+        class="showcase-section">
+
+        <div class="container">
+
+
+            <div class="text-center">
+
+                <h2 class="section-title">
+
+                    סוף סוף, הדרך לסטייל
+                    שמחובר למי שאת באמת
+
+                </h2>
+
+
+                <div class="gold-line"></div>
+
+            </div>
+
+
+            <div class="row align-items-center g-5">
+
+
+                <!-- IMAGE -->
+
+                <div class="col-lg-6">
+
+                    <div class="showcase-image-wrapper">
+
+                        <img
+                            src="https://media.landy-ai.com/Landy-Media/6a00b470fcdd04981ae34f86/nkbo2dpdjk-4098.jpeg"
+                            alt="מפת קוד הסטייל"
+                            class="showcase-image"
+                            loading="lazy">
+
+
+                        <div class="floating-badge">
+
+                            <div class="floating-icon">
+
+                                <i class="bi bi-check-lg"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <p class="fw-bold mb-0">
+
+                                    מותאם אישית
+
+                                </p>
+
+                                <small class="text-muted">
+
+                                    לפי תאריך הלידה שלך
+
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- TEXT -->
+
+                <div class="col-lg-6">
+
+                    <div class="showcase-text">
+
+                        <p>
+
+                            מפת המבנה האנרגטי היא לא עוד מדריך אופנה.
+                            זוהי מפה אישית, המבוססת על תאריך הלידה שלך
+                            והמבנה האנרגטי הייחודי שלך, שחושפת בפנייך
+                            את הלבוש שמדויק לנשמה שלך.
+
+                        </p>
+
+
+                        <p>
+
+                            במקום לנחש מה נכון לך, תקבלי
+
+                            <strong>
+                                הכוונה ברורה
+                            </strong>
+
+                            שתחבר בין העולם הפנימי שלך לביטוי החיצוני שלך.
+
+                            זוהי הדרך שלך להפסיק להרגיש מחופשת
+                            ולהתחיל להתלבש בביטחון,
+
+                            <strong>
+                                בקלות ובדיוק מושלם.
+                            </strong>
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         DIVIDER
+    ================================================== -->
+
+    <div
+        class="divider"
+        style="background:#ffffff;">
+
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1200 200"
+            preserveAspectRatio="none">
+
+            <path
+                d="M0,0V200H1200V63.56C1131.99,79.66,1058.36,89.78,985.66,89.78C906.67,89.78,823.78,77.66,743.84,68.42C661.58,58.85,575.78,57.85,493.39,72.94C435.55,83.66,379.39,103,321.39,113.78C214.04,133.85,107.16,123.78,0,103.66Z"
+                fill="#fdf5f6">
+            </path>
+
+        </svg>
+
+    </div>
+
+
+
+    <!-- ==================================================
+         TESTIMONIALS
+    ================================================== -->
+
+    <section
+        id="testimonials"
+        class="testimonials-section">
+
+        <div class="container">
+
+
+            <div class="text-center mb-5">
+
+                <h2 class="section-title">
+
+                    נשים שכבר גילו
+                    את המבנה האנרגטי שלהן מספרות
+
+                </h2>
+
+            </div>
+
+
+            <!-- Two large testimonials -->
+
+            <div class="row g-4 mb-4">
+
+                <div class="col-md-6">
+
+                    <div class="testimonial-card">
+
+                        <img
+                            src="https://media.landy-ai.com/Landy-Media/6a00b470fcdd04981ae34f86/vdgczffuyp-2126.jpeg"
+                            alt="המלצה"
+                            class="testimonial-image"
+                            loading="lazy">
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-6">
+
+                    <div class="testimonial-card">
+
+                        <img
+                            src="https://media.landy-ai.com/Landy-Media/6a00b470fcdd04981ae34f86/lq40ph4w1o-8275.jpeg"
+                            alt="המלצה"
+                            class="testimonial-image"
+                            loading="lazy">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Additional testimonials -->
+
+            <div class="row g-4">
+
+                <div class="col-md-4">
+
+                    <img
+                        src="https://media.landy-ai.com/Landy-Media/6a00b470fcdd04981ae34f86/08zc2ddgdn-2189.jpeg"
+                        alt="המלצה"
+                        class="testimonial-image"
+                        loading="lazy">
+
+                </div>
+
+
+                <div class="col-md-4">
+
+                    <img
+                        src="https://media.landy-ai.com/Landy-Media/6a00b470fcdd04981ae34f86/1yexm3i5ug-7371.jpeg"
+                        alt="המלצה"
+                        class="testimonial-image"
+                        loading="lazy">
+
+                </div>
+
+
+                <div class="col-md-4">
+
+                    <img
+                        src="https://media.landy-ai.com/Landy-Media/6a00b470fcdd04981ae34f86/cbqotrcimw-6607.jpeg"
+                        alt="המלצה"
+                        class="testimonial-image"
+                        loading="lazy">
+
+                </div>
+
+
+                <div class="col-md-4">
+
+                    <img
+                        src="https://media.landy-ai.com/Landy-Media/6a00b470fcdd04981ae34f86/ubrd9md5i4-8043.jpeg"
+                        alt="המלצה"
+                        class="testimonial-image"
+                        loading="lazy">
+
+                </div>
+
+
+                <div class="col-md-4">
+
+                    <img
+                        src="https://media.landy-ai.com/Landy-Media/6a00b470fcdd04981ae34f86/7plkywkpcg-5225.jpeg"
+                        alt="המלצה"
+                        class="testimonial-image"
+                        loading="lazy">
+
+                </div>
+
+
+                <div class="col-md-4">
+
+                    <img
+                        src="https://media.landy-ai.com/Landy-Media/6a00b470fcdd04981ae34f86/kze1qgurul-8647.jpeg"
+                        alt="המלצה"
+                        class="testimonial-image"
+                        loading="lazy">
+
+                </div>
+
+
+                <div class="col-md-4">
+
+                    <img
+                        src="https://media.landy-ai.com/Landy-Media/6a00b470fcdd04981ae34f86/f88h0yw9t0-2071.jpeg"
+                        alt="המלצה"
+                        class="testimonial-image"
+                        loading="lazy">
+
+                </div>
+
+
+                <div class="col-md-4">
+
+                    <img
+                        src="https://media.landy-ai.com/Landy-Media/6a00b470fcdd04981ae34f86/m8rfgy8tsf-8563.jpeg"
+                        alt="המלצה"
+                        class="testimonial-image"
+                        loading="lazy">
+
+                </div>
+
+
+                <div class="col-md-4">
+
+                    <img
+                        src="https://media.landy-ai.com/Landy-Media/6a00b470fcdd04981ae34f86/ppmu4rmb27-3285.jpeg"
+                        alt="המלצה"
+                        class="testimonial-image"
+                        loading="lazy">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         DIVIDER
+    ================================================== -->
+
+    <div
+        class="divider"
+        style="background:#fdf5f6;">
+
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1200 120"
+            preserveAspectRatio="none">
+
+            <path
+                d="M0,120V73.71c47.79-22.2,103.59-32.17,158-28,70.36,5.37,136.33,33.31,206.8,37.5,72.84,4.36,146.54-16.88,217.19-35.26,69.27-18,138.3-24.88,209.4-13.08,36.15,6,69.85,17.84,104.45,29.34C989.49,95,1113,134.29,1200,67.53V120Z"
+                opacity=".25"
+                fill="#fce4ec">
+            </path>
+
+
+            <path
+                d="M0,120V104.19C13,83.08,27.64,63.14,47.69,47.95,99.41,8.73,165,9,224.58,28.42c31.15,10.15,60.09,26.07,89.67,39.8,40.92,19,84.73,46,130.83,49.67,36.26,2.85,70.9-9.42,98.6-31.56,31.77-25.39,62.32-62,103.63-73,40.44-10.79,81.35,6.69,119.13,24.28s75.16,39,116.92,43.05c59.73,5.85,113.28-22.88,168.9-38.84,30.2-8.66,59-6.17,87.09,7.5,22.43,10.89,48,26.93,60.65,49.24V120Z"
+                opacity=".5"
+                fill="#fce4ec">
+            </path>
+
+
+            <path
+                d="M0,120V114.37C149.93,61,314.09,48.68,475.83,77.43c43,7.64,84.23,20.12,127.61,26.46,59,8.63,112.48-12.24,165.56-35.4C827.93,42.78,886,24.76,951.2,30c86.53,7,172.46,45.71,248.8,84.81V120Z"
+                fill="#fce4ec">
+            </path>
+
+        </svg>
+
+    </div>
+
+
+
+    <!-- ==================================================
+         ABOUT CREATOR
+    ================================================== -->
+
+    <section
+        id="creator"
+        class="creator-section">
+
+        <div class="container">
+
+            <div class="row align-items-center g-5">
+
+
+                <!-- IMAGE -->
+
+                <div class="col-lg-6">
+
+                    <div class="creator-image-wrapper">
+
+                        <img
+                            src="https://media.landy-ai.com/Landy-Media/6a00b470fcdd04981ae34f86/u3yuehzs74-7183.jpg"
+                            alt="ספיר סרוסי"
+                            class="creator-image"
+                            loading="lazy">
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- TEXT -->
+
+                <div class="col-lg-6">
+
+                    <h2 class="section-title mb-4">
+
+                        מי עומדת מאחורי
+                        מפת המבנה האנרגטי?
+
+                    </h2>
+
+
+                    <div class="creator-text">
+
+
+                        <p>
+
+                            נעים מאוד, קוראים לי ספיר סרוסי.
+
+                            תמיד אהבתי את עולם היופי והאופנה.
+                            אחרי שלמדתי סטיילינג, לא רציתי להיות כמו
+                            כל הסטייליסטיות שמדברות רק על החוקים
+                            של הסטיילינג.
+
+                        </p>
+
+
+                        <p>
+
+                            לכן חיפשתי את סגנון הסטיילינג שלי
+                            והתחלתי ללבוש מה שאני אוהבת.
+
+                            שמתי לב שברגע שאני לובשת צבעים
+                            שאני אוהבת, האנרגיה שלי עולה.
+
+                            בדקתי האם יש לזה הסבר בעולם הרוח
+                            וגיליתי שכן.
+
+                        </p>
+
+
+                        <p>
+
+                            כך מצאתי את הגשר, הקשר והחיבור
+                            של עולם האופנה והיופי לעולם הרוח.
+
+                            המסע שלי הוביל אותי לחקור את הקשר
+                            המופלא בין תאריך הלידה שלנו,
+                            המבנה האנרגטי המולד,
+                            ואיך כל זה בא לידי ביטוי
+                            בבחירות הסטיילינג שלנו.
+
+                        </p>
+
+
+                        <p>
+
+                            גיליתי שהבגדים שלנו הם לא רק בדים.
+
+                            הם
+
+                            <strong>
+                                ערוץ אנרגטי.
+                            </strong>
+
+                            כשלומדים להתאים אותם לתדר האישי שלנו,
+                            הביטחון עולה והנוכחות מתעצמת.
+
+                        </p>
+
+
+                        <p>
+
+                            את מפת המבנה האנרגטי יצרתי כדי לתת לך
+                            קיצור דרך.
+
+                            כדי לפתוח לך דלת לעולם הסטיילינג הרוחני
+                            ולהעניק לך את הידע המדויק שיאפשר לך
+
+                            <strong>
+                                סוף סוף
+                            </strong>
+
+                            להרגיש שלמה.
+
+                            <strong>
+                                זאת השליחות שלי.
+                            </strong>
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         DIVIDER
+    ================================================== -->
+
+    <div
+        class="divider"
+        style="background:#fce4ec;">
+
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1200 120"
+            preserveAspectRatio="none">
+
+            <path
+                d="M0,120V73.71c47.79-22.2,103.59-32.17,158-28,70.36,5.37,136.33,33.31,206.8,37.5C438.64,87.57,512.34,66.33,583,47.95c69.27-18,138.3-24.88,209.4-13.08,36.15,6,69.85,17.84,104.45,29.34,98.71,32.55,222.31,71.91,303.15,5.13V120Z"
+                opacity=".4"
+                fill="#ffffff">
+            </path>
+
+
+            <path
+                d="M0,120V104.19C13,83.08,27.64,63.14,47.69,47.95,99.41,8.73,165,9,224.58,28.42c31.15,10.15,60.09,26.07,89.67,39.8,40.92,19,84.73,46,130.83,49.67,36.26,2.85,70.9-9.42,98.6-31.56,31.77-25.39,62.32-62,103.63-73,40.44-10.79,81.35,6.69,119.13,24.28s75.16,39,116.92,43.05c59.73,5.85,113.28-22.88,168.9-38.84,30.2-8.66,59-6.17,87.09,7.5,22.43,10.89,48,26.93,60.65,49.24V120Z"
+                fill="#ffffff">
+            </path>
+
+        </svg>
+
+    </div>
+
+
+
+    <!-- ==================================================
+         FINAL CTA
+    ================================================== -->
+
+    <section class="final-cta">
+
+        <div class="container">
+
+            <div class="cta-card">
+
+
+                <div class="text-center mb-5">
+
+                    <h2 class="cta-title">
+
+                        הגיע הזמן שלך להפסיק
+                        להרגיש אבודה מול הארון
+
+                    </h2>
+
+                </div>
+
+
+
+                <div class="benefits-box mb-5">
+
+
+                    <h3
+                        class="h4 fw-bold text-center mb-4"
+                        style="color:#d81b60;">
+
+                        מפת המבנה האנרגטי החינמית שלך תעניק לך:
+
+                    </h3>
+
+
+                    <div class="benefit-item">
+
+                        <i class="bi bi-check-circle-fill benefit-icon"></i>
+
+                        <span>
+
+                            הבנה של המבנה האנרגטי שלך
+                            ואיך להתלבש
+
+                            <strong>
+                                בהתאם
+                            </strong>
+
+                            אליו.
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="benefit-item">
+
+                        <i class="bi bi-check-circle-fill benefit-icon"></i>
+
+                        <span>
+
+                            את
+
+                            <strong>
+                                הצעד הראשון
+                            </strong>
+
+                            לשחרור הכאוס מהארון ומהנפש.
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="benefit-item">
+
+                        <i class="bi bi-check-circle-fill benefit-icon"></i>
+
+                        <span>
+
+                            ביטחון לבחור בגדים
+                            שמשקפים את האור הפנימי
+
+                            <strong>
+                                האמיתי
+                            </strong>
+
+                            שלך.
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="text-center">
+
+
+                    <p
+                        class="fs-5 fw-bold mb-4">
+
+                        כל מה שמפריד בינך לבין הבהירות הזו
+                        הוא מילוי הפרטים שלך.
+
+                        <br>
+
+                        מלאי את הפרטים וקבלי את המפה האישית שלך
+
+                        <strong>
+                            במתנה.
+                        </strong>
+
+                    </p>
+
+
+                    <a
+                        href="#register"
+                        class="btn-final-cta">
+
+                        כן, שלחי לי את המפה עכשיו!
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         FOOTER
+    ================================================== -->
+
+    <footer class="footer">
+
+        <div class="container">
+
+
+            <div class="d-flex flex-wrap justify-content-center gap-4 mb-4">
+
+                <a href="/privacy.html">
+
+                    מדיניות פרטיות
+
+                </a>
+
+
+                <a href="/privacy.html">
+
+                    תקנון האתר
+
+                </a>
+
+
+                <a href="#register">
+
+                    הרשמה
+
+                </a>
+
+            </div>
+
+
+            <div class="text-center footer-copyright">
+
+                <p class="mb-2">
+
+                    © 2026 כל הזכויות שמורות לספיר סרוסי.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- ==================================================
+         BOOTSTRAP JS
+    ================================================== -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+
+
+    <!-- ==================================================
+         ACCESSIBILITY
+    ================================================== -->
+
+    <script
+        src="https://cdn.jsdelivr.net/gh/yortem/yAccessibility@latest/yaccessibility.js">
+    </script>
+
+
+    <script>
+
+        if (typeof yAccessibility === 'function') {
+
+            yAccessibility({
+
+                language: 'he',
+
+                verticalPosition: 'bottom',
+
+                verticalOffset: 20
+
+            });
+
+        }
+
+    </script>
+
+
+
+    <!-- ==================================================
+         ORIGINAL SERVER FORM JS
+         DO NOT REMOVE
+    ================================================== -->
+
+    <script src="./js/index.js"></script>
+
+
+</body>
+
+</html>

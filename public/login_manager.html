@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+
+<html lang="he" dir="rtl">
+
+<head>
+
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>כניסת מנהלת | ספיר סרוסי סטיילינג</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link rel="preconnect"
+      href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet">
+
+
+<style>
+
+    body {
+        font-family: 'Heebo', sans-serif;
+    }
+
+    .login-card {
+        animation: fadeIn 0.5s ease;
+    }
+
+    @keyframes fadeIn {
+
+        from {
+            opacity: 0;
+            transform: translateY(15px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+    }
+
+</style>
+
+
+</head>
+
+<body class="bg-slate-50 min-h-screen flex items-center justify-center px-4">
+
+
+<!-- Background -->
+
+<div class="fixed inset-0 -z-10">
+
+    <div class="absolute inset-0 bg-gradient-to-br
+                from-blue-950
+                via-blue-900
+                to-slate-900">
+    </div>
+
+    <div class="absolute inset-0
+                bg-[radial-gradient(circle_at_top_right,_rgba(59,130,246,0.25),_transparent_40%)]">
+    </div>
+
+</div>
+
+
+<!-- Login Card -->
+
+<main class="login-card w-full max-w-md">
+
+    <div class="bg-white rounded-3xl shadow-2xl
+                border border-slate-200
+                p-8 sm:p-10">
+
+
+        <!-- Logo / Title -->
+
+        <div class="text-center mb-8">
+
+            <div class="mx-auto mb-5
+                        w-16 h-16
+                        rounded-2xl
+                        bg-blue-100
+                        flex items-center justify-center">
+
+                <span class="text-3xl">
+                    ✨
+                </span>
+
+            </div>
+
+
+            <h1 class="text-3xl font-bold text-slate-800">
+
+                מערכת הניהול
+
+            </h1>
+
+
+            <p class="text-slate-500 mt-2">
+
+                ספיר סרוסי סטיילינג
+
+            </p>
+
+        </div>
+
+
+        <!-- Login Form -->
+
+        <form id="loginForm">
+
+
+            <!-- Username -->
+
+            <div class="mb-5">
+
+                <label
+                    for="username"
+                    class="block text-sm font-semibold
+                           text-slate-700 mb-2">
+
+                    שם משתמש
+
+                </label>
+
+
+                <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    autocomplete="username"
+                    required
+
+                    class="w-full px-4 py-3
+                           rounded-xl
+                           border border-slate-300
+                           focus:outline-none
+                           focus:ring-2
+                           focus:ring-blue-500
+                           focus:border-blue-500
+                           transition"
+
+                    placeholder="הזיני שם משתמש">
+
+            </div>
+
+
+            <!-- Password -->
+
+            <div class="mb-6">
+
+                <label
+                    for="password"
+                    class="block text-sm font-semibold
+                           text-slate-700 mb-2">
+
+                    סיסמה
+
+                </label>
+
+
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    autocomplete="current-password"
+                    required
+
+                    class="w-full px-4 py-3
+                           rounded-xl
+                           border border-slate-300
+                           focus:outline-none
+                           focus:ring-2
+                           focus:ring-blue-500
+                           focus:border-blue-500
+                           transition"
+
+                    placeholder="הזיני סיסמה">
+
+            </div>
+
+
+            <!-- Error -->
+
+            <div
+                id="errorMessage"
+                class="hidden mb-5
+                       bg-red-50
+                       border border-red-200
+                       text-red-700
+                       rounded-xl
+                       px-4 py-3
+                       text-sm">
+
+            </div>
+
+
+            <!-- Login Button -->
+
+            <button
+                type="submit"
+                id="loginButton"
+
+                class="w-full
+                       bg-blue-600
+                       hover:bg-blue-700
+                       text-white
+                       font-semibold
+                       py-3
+                       rounded-xl
+                       transition
+                       shadow-lg
+                       shadow-blue-600/20">
+
+                כניסה למערכת
+
+            </button>
+
+
+        </form>
+
+
+        <!-- Back -->
+
+        <div class="text-center mt-6">
+
+            <a
+                href="/"
+                class="text-sm text-slate-500
+                       hover:text-blue-600
+                       transition">
+
+                ← חזרה לאתר
+
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- Footer -->
+
+    <p class="text-center text-white/60
+              text-sm mt-6">
+
+        © 2026 ספיר סרוסי סטיילינג
+
+    </p>
+
+</main>
+
+
+<script>
+
+    const loginForm =
+        document.getElementById('loginForm');
+
+    const loginButton =
+        document.getElementById('loginButton');
+
+    const errorMessage =
+        document.getElementById('errorMessage');
+
+
+    loginForm.addEventListener(
+        'submit',
+        async (event) => {
+
+            event.preventDefault();
+
+
+            const username =
+                document.getElementById('username').value.trim();
+
+            const password =
+                document.getElementById('password').value;
+
+
+            // ==========================================
+            // איפוס הודעת שגיאה
+            // ==========================================
+
+            errorMessage.classList.add('hidden');
+            errorMessage.textContent = '';
+
+
+            // ==========================================
+            // מצב טעינה
+            // ==========================================
+
+            loginButton.disabled = true;
+
+            loginButton.textContent =
+                'מתחבר...';
+
+
+            try {
+
+                const response =
+                    await fetch('/admin/login', {
+
+                        method: 'POST',
+
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+
+                        body: JSON.stringify({
+
+                            username: username,
+
+                            password: password
+
+                        })
+
+                    });
+
+
+                const data =
+                    await response.json();
+
+
+                // ==========================================
+                // התחברות נכשלה
+                // ==========================================
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        data.message ||
+                        'שם משתמש או סיסמה שגויים'
+                    );
+
+                }
+
+
+                // ==========================================
+                // שמירת הטוקן
+                // ==========================================
+
+                localStorage.setItem(
+                    'adminToken',
+                    data.token
+                );
+
+
+                // ==========================================
+                // שמירת פרטי המנהל
+                // ==========================================
+
+                localStorage.setItem(
+                    'admin',
+                    JSON.stringify(data.admin)
+                );
+
+
+                // ==========================================
+                // מעבר למערכת הניהול
+                // ==========================================
+
+                window.location.href =
+                    '/managemant_page';
+
+
+            } catch (error) {
+
+                console.error(
+                    'Login error:',
+                    error
+                );
+
+
+                errorMessage.textContent =
+                    error.message ||
+                    'אירעה שגיאה בהתחברות';
+
+
+                errorMessage.classList.remove(
+                    'hidden'
+                );
+
+
+                loginButton.disabled = false;
+
+                loginButton.textContent =
+                    'כניסה למערכת';
+
+            }
+
+        }
+    );
+
+</script>
+
+
+</body>
+
+</html>
