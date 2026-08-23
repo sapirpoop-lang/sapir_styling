@@ -171,10 +171,6 @@ const getAllCustomers = async (req, res) => {
 
 
 // ==========================================
-// שליחת מייל לכל הלקוחות
-// ==========================================
-
-// ==========================================
 // שליחת מייל לכל הלקוחות / לקבוצה
 // ==========================================
 
@@ -187,6 +183,14 @@ const sendEmailToAllCustomers = async (req, res) => {
             body,
             group
         } = req.body;
+
+
+        // ==========================================
+        // קבלת תמונה אם הועלתה
+        // ==========================================
+
+        const image =
+            req.file || null;
 
 
         // ==========================================
@@ -233,14 +237,16 @@ const sendEmailToAllCustomers = async (req, res) => {
         // קבלת הלקוחות
         // ==========================================
 
-        const customers = await Customer.find(query);
+        const customers =
+            await Customer.find(query);
 
 
         if (customers.length === 0) {
 
             return res.status(404).json({
 
-                message: 'לא נמצאו לקוחות לשליחת המייל'
+                message:
+                    'לא נמצאו לקוחות לשליחת המייל'
 
             });
 
@@ -261,12 +267,22 @@ const sendEmailToAllCustomers = async (req, res) => {
 
                 await sendEmail({
 
-                    to: customer.email,
+                    to:
+                        customer.email,
 
                     subject:
-                        subject || 'ספיר סרוסי סטיילינג רוחני',
+                        subject ||
+                        'ספיר סרוסי סטיילינג רוחני',
 
-                    body: body
+                    body:
+                        body,
+
+                    // ==========================================
+                    // העברת התמונה ל-emailService
+                    // ==========================================
+
+                    image:
+                        image
 
                 });
 
@@ -296,17 +312,25 @@ const sendEmailToAllCustomers = async (req, res) => {
 
         return res.status(200).json({
 
-            message: group
-                ? `הדיוור לקבוצת "${group}" הסתיים`
-                : 'הדיוור לכל הלקוחות הסתיים',
+            message:
+                group
+                    ? `הדיוור לקבוצת "${group}" הסתיים`
+                    : 'הדיוור לכל הלקוחות הסתיים',
 
-            totalCustomers: customers.length,
+            totalCustomers:
+                customers.length,
 
-            sent: sentCount,
+            sent:
+                sentCount,
 
-            failed: failedCount
+            failed:
+                failedCount,
+
+            imageIncluded:
+                Boolean(image)
 
         });
+
 
     } catch (error) {
 
@@ -321,7 +345,8 @@ const sendEmailToAllCustomers = async (req, res) => {
 
         return res.status(500).json({
 
-            message: 'אירעה שגיאה בשליחת הדיוור'
+            message:
+                'אירעה שגיאה בשליחת הדיוור'
 
         });
 

@@ -636,6 +636,7 @@
 
                 </div>
 
+
                 <!-- בחירת קבוצה -->
 
                 <label for="emailGroup" class="block text-sm font-semibold
@@ -683,6 +684,8 @@
 
 
                 </select>
+
+
                 <!-- Message -->
 
                 <label for="emailBody" class="block text-sm font-semibold
@@ -704,7 +707,46 @@
                focus:border-blue-500
                transition">
 
-    </textarea>
+                </textarea>
+
+
+                <!-- ========================================== -->
+                <!-- תמונה אופציונלית למייל -->
+                <!-- ========================================== -->
+
+                <div class="mt-5">
+
+                    <label for="emailImage" class="block text-sm font-semibold
+                   text-slate-700 mb-2">
+
+                        צרף תמונה למייל (אופציונלי)
+
+                    </label>
+
+
+                    <input type="file"
+                        id="emailImage"
+                        accept="image/jpeg,image/png,image/webp"
+                        class="w-full
+                       px-4 py-3
+                       rounded-xl
+                       border border-slate-300
+                       bg-white
+                       text-slate-700
+                       cursor-pointer
+                       focus:outline-none
+                       focus:ring-2
+                       focus:ring-blue-500">
+
+
+                    <p id="selectedEmailImage"
+                        class="text-sm text-slate-500 mt-2">
+
+                        לא נבחרה תמונה
+
+                    </p>
+
+                </div>
 
 
                 <!-- Email result -->
@@ -743,6 +785,7 @@
         </section>
 
     </main>
+
 
     <!-- ========================================== -->
 
@@ -839,6 +882,7 @@
             document.getElementById(
                 'refreshButton'
             );
+
         const exportButton =
             document.getElementById(
                 'exportButton'
@@ -848,6 +892,7 @@
             document.getElementById(
                 'emailBody'
             );
+
         const emailGroup =
             document.getElementById(
                 'emailGroup'
@@ -862,6 +907,22 @@
             document.getElementById(
                 'emailResult'
             );
+
+
+        // ==========================================
+        // Email Image Elements
+        // ==========================================
+
+        const emailImage =
+            document.getElementById(
+                'emailImage'
+            );
+
+        const selectedEmailImage =
+            document.getElementById(
+                'selectedEmailImage'
+            );
+
 
         const logoutButton =
             document.getElementById(
@@ -1077,6 +1138,7 @@
                             ${customer.landingPage ?? '-'}
                         </td>
 
+
                         <!-- ========================================== -->
                         <!-- כפתור מחיקה -->
                         <!-- ========================================== -->
@@ -1168,10 +1230,6 @@
             button
         ) {
 
-            // ==========================================
-            // בדיקה שיש ID
-            // ==========================================
-
             if (!customerId) {
 
                 alert(
@@ -1182,10 +1240,6 @@
 
             }
 
-
-            // ==========================================
-            // אישור מחיקה
-            // ==========================================
 
             const confirmed =
                 confirm(
@@ -1205,10 +1259,6 @@
 
             }
 
-
-            // ==========================================
-            // מצב טעינה
-            // ==========================================
 
             button.disabled = true;
 
@@ -1239,10 +1289,6 @@
                     );
 
 
-                // ==========================================
-                // Token לא תקין
-                // ==========================================
-
                 if (response.status === 401) {
 
                     logout();
@@ -1256,10 +1302,6 @@
                     await response.json();
 
 
-                // ==========================================
-                // שגיאה
-                // ==========================================
-
                 if (!response.ok) {
 
                     throw new Error(
@@ -1272,18 +1314,10 @@
                 }
 
 
-                // ==========================================
-                // הצלחה
-                // ==========================================
-
                 alert(
                     'הלקוח נמחק בהצלחה'
                 );
 
-
-                // ==========================================
-                // טעינה מחדש של הרשימה
-                // ==========================================
 
                 await loadCustomers();
 
@@ -1326,10 +1360,6 @@
                 excelFile.files[0];
 
 
-            // ==========================================
-            // בדיקה שנבחר קובץ
-            // ==========================================
-
             if (!file) {
 
                 showImportResult(
@@ -1341,10 +1371,6 @@
 
             }
 
-
-            // ==========================================
-            // בדיקת סוג הקובץ
-            // ==========================================
 
             const fileName =
                 file.name.toLowerCase();
@@ -1365,10 +1391,6 @@
             }
 
 
-            // ==========================================
-            // אישור
-            // ==========================================
-
             const confirmed =
                 confirm(
                     'האם את בטוחה שברצונך לייבא את הלקוחות מקובץ Excel?'
@@ -1382,10 +1404,6 @@
             }
 
 
-            // ==========================================
-            // FormData
-            // ==========================================
-
             const formData =
                 new FormData();
 
@@ -1395,10 +1413,6 @@
                 file
             );
 
-
-            // ==========================================
-            // מצב טעינה
-            // ==========================================
 
             importButton.disabled = true;
 
@@ -1433,10 +1447,6 @@
                     );
 
 
-                // ==========================================
-                // Token לא תקין
-                // ==========================================
-
                 if (response.status === 401) {
 
                     logout();
@@ -1450,10 +1460,6 @@
                     await response.json();
 
 
-                // ==========================================
-                // שגיאה
-                // ==========================================
-
                 if (!response.ok) {
 
                     throw new Error(
@@ -1463,10 +1469,6 @@
 
                 }
 
-
-                // ==========================================
-                // יצירת הודעת תוצאה
-                // ==========================================
 
                 let message =
 
@@ -1478,10 +1480,6 @@
 
                     `⚠️ לקוחות שדולגו: ${data.skipped}`;
 
-
-                // ==========================================
-                // פירוט לקוחות שדולגו
-                // ==========================================
 
                 if (
                     data.skippedCustomers &&
@@ -1519,29 +1517,17 @@
                 }
 
 
-                // ==========================================
-                // הצגת התוצאה
-                // ==========================================
-
                 showImportResult(
                     message,
                     true
                 );
 
 
-                // ==========================================
-                // ניקוי הקובץ
-                // ==========================================
-
                 excelFile.value = '';
 
                 selectedFile.textContent =
                     'לא נבחר קובץ';
 
-
-                // ==========================================
-                // רענון רשימת הלקוחות
-                // ==========================================
 
                 await loadCustomers();
 
@@ -1651,6 +1637,34 @@
 
 
         // ==========================================
+        // בחירת תמונה למייל
+        // ==========================================
+
+        emailImage.addEventListener(
+            'change',
+            () => {
+
+                const file =
+                    emailImage.files[0];
+
+
+                if (file) {
+
+                    selectedEmailImage.textContent =
+                        `נבחרה תמונה: ${file.name}`;
+
+                } else {
+
+                    selectedEmailImage.textContent =
+                        'לא נבחרה תמונה';
+
+                }
+
+            }
+        );
+
+
+        // ==========================================
         // שליחת מייל
         // ==========================================
 
@@ -1676,12 +1690,83 @@
                 emailGroup.value;
 
 
-            const message =
+            // ==========================================
+            // תמונה אופציונלית
+            // ==========================================
+
+            const image =
+                emailImage.files[0] || null;
+
+
+            // ==========================================
+            // בדיקת התמונה
+            // ==========================================
+
+            if (image) {
+
+                const allowedTypes = [
+
+                    'image/jpeg',
+                    'image/png',
+                    'image/webp'
+
+                ];
+
+
+                if (
+                    !allowedTypes.includes(
+                        image.type
+                    )
+                ) {
+
+                    showEmailResult(
+                        'ניתן לצרף רק תמונת JPG, PNG או WEBP',
+                        false
+                    );
+
+                    return;
+
+                }
+
+
+                const maxSize =
+                    5 * 1024 * 1024;
+
+
+                if (
+                    image.size > maxSize
+                ) {
+
+                    showEmailResult(
+                        'גודל התמונה יכול להיות עד 5MB',
+                        false
+                    );
+
+                    return;
+
+                }
+
+            }
+
+
+            // ==========================================
+            // אישור שליחה
+            // ==========================================
+
+            let message =
                 selectedGroup
 
                     ? `האם את בטוחה שברצונך לשלוח מייל לקבוצת "${selectedGroup}"?`
 
                     : 'האם את בטוחה שברצונך לשלוח מייל לכל הלקוחות הרשומים?';
+
+
+            if (image) {
+
+                message +=
+                    '\n\nלמייל תצורף גם תמונה.';
+
+            }
 
 
             const confirmed =
@@ -1694,6 +1779,40 @@
 
             }
 
+
+            // ==========================================
+            // FormData
+            // ==========================================
+
+            const formData =
+                new FormData();
+
+
+            formData.append(
+                'body',
+                body
+            );
+
+
+            formData.append(
+                'group',
+                selectedGroup
+            );
+
+
+            if (image) {
+
+                formData.append(
+                    'image',
+                    image
+                );
+
+            }
+
+
+            // ==========================================
+            // מצב טעינה
+            // ==========================================
 
             sendEmailButton.disabled = true;
 
@@ -1717,19 +1836,13 @@
 
                             headers: {
 
-                                'Content-Type':
-                                    'application/json',
-
                                 'Authorization':
                                     `Bearer ${token}`
 
                             },
 
-                            body: JSON.stringify({
-
-                                body: body,
-                                group: emailGroup.value
-                            })
+                            body:
+                                formData
 
                         }
                     );
@@ -1773,7 +1886,16 @@
                 );
 
 
+                // ==========================================
+                // ניקוי לאחר השליחה
+                // ==========================================
+
                 emailBody.value = '';
+
+                emailImage.value = '';
+
+                selectedEmailImage.textContent =
+                    'לא נבחרה תמונה';
 
 
             } catch (error) {
@@ -1898,6 +2020,7 @@
 
         }
 
+
         // ==========================================
         // ייצוא לקוחות לאקסל
         // ==========================================
@@ -1906,32 +2029,41 @@
 
             try {
 
-                const token = localStorage.getItem('adminToken');
+                const token =
+                    localStorage.getItem(
+                        'adminToken'
+                    );
 
-                const response = await fetch(
 
-                    '/admin/customers/export',
+                const response =
+                    await fetch(
 
-                    {
+                        '/admin/customers/export',
 
-                        method: 'GET',
+                        {
 
-                        headers: {
+                            method: 'GET',
 
-                            Authorization: `Bearer ${token}`
+                            headers: {
+
+                                Authorization:
+                                    `Bearer ${token}`
+
+                            }
 
                         }
 
-                    }
-
-                );
+                    );
 
 
                 if (!response.ok) {
 
-                    const error = await response.json();
+                    const error =
+                        await response.json();
 
-                    alert(error.message);
+                    alert(
+                        error.message
+                    );
 
                     return;
 
@@ -1942,35 +2074,60 @@
                 // הורדת הקובץ
                 // ==========================================
 
-                const blob = await response.blob();
+                const blob =
+                    await response.blob();
 
-                const url = window.URL.createObjectURL(blob);
 
-                const a = document.createElement('a');
+                const url =
+                    window.URL.createObjectURL(
+                        blob
+                    );
 
-                a.href = url;
 
-                a.download = 'customers.xlsx';
+                const a =
+                    document.createElement(
+                        'a'
+                    );
 
-                document.body.appendChild(a);
+
+                a.href =
+                    url;
+
+                a.download =
+                    'customers.xlsx';
+
+
+                document.body.appendChild(
+                    a
+                );
+
 
                 a.click();
 
                 a.remove();
 
-                window.URL.revokeObjectURL(url);
+
+                window.URL.revokeObjectURL(
+                    url
+                );
 
             }
 
             catch (error) {
 
-                console.error(error);
+                console.error(
+                    error
+                );
 
-                alert('אירעה שגיאה בייצוא הלקוחות');
+                alert(
+                    'אירעה שגיאה בייצוא הלקוחות'
+                );
 
             }
 
         }
+
+
         // ==========================================
         // Events
         // ==========================================
@@ -1979,10 +2136,13 @@
             'click',
             loadCustomers
         );
+
+
         exportButton.addEventListener(
             'click',
             exportCustomers
         );
+
 
         sendEmailButton.addEventListener(
             'click',

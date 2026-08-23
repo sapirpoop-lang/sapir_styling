@@ -29,7 +29,13 @@ const sendEmail = async ({
     to,
     from,
     subject,
-    body
+    body,
+
+    // ==========================================
+    // תמונה אופציונלית
+    // ==========================================
+
+    image
 
 }) => {
 
@@ -53,17 +59,60 @@ const sendEmail = async ({
 
 
         // ==========================================
+        // HTML של התמונה
+        // ==========================================
+
+        let imageHtml = '';
+
+
+        if (
+            image &&
+            image.buffer
+        ) {
+
+            imageHtml = `
+
+                <div style="
+                    text-align: center;
+                    margin: 25px 0;
+                ">
+
+                    <img
+                        src="cid:email-image"
+                        alt=""
+                        style="
+                            display: block;
+                            max-width: 100%;
+                            width: auto;
+                            height: auto;
+                            margin: 0 auto;
+                            border: 0;
+                        "
+                    >
+
+                </div>
+
+            `;
+
+        }
+
+
+        // ==========================================
         // גוף המייל
         // ==========================================
 
         const emailBody = `
 
-            <div dir="rtl"
-                 style="
+            <div
+                dir="rtl"
+                style="
                     font-family: Arial, sans-serif;
-                 ">
+                "
+            >
 
                 ${body}
+
+                ${imageHtml}
 
                 <br>
                 <br>
@@ -121,6 +170,39 @@ const sendEmail = async ({
             html: emailBody
 
         };
+
+
+        // ==========================================
+        // הוספת תמונה למייל
+        // ==========================================
+
+        if (
+            image &&
+            image.buffer
+        ) {
+
+            mailOptions.attachments = [
+
+                {
+
+                    filename:
+                        image.originalname ||
+                        'email-image',
+
+                    content:
+                        image.buffer,
+
+                    contentType:
+                        image.mimetype,
+
+                    cid:
+                        'email-image'
+
+                }
+
+            ];
+
+        }
 
 
         // ==========================================
