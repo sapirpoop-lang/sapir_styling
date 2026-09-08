@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>המסר שלך - הנשמה</title>
-    
+
     <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&family=Heebo:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&family=Heebo:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 
     <!-- BOOTSTRAP RTL & ICONS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
@@ -31,7 +34,8 @@
             --text-dark: #5a4a42;
         }
 
-        body, html {
+        body,
+        html {
             height: 100%;
             background-color: var(--bg-color);
             font-family: 'Assistant', sans-serif;
@@ -68,7 +72,8 @@
             align-items: center;
             min-height: 100%;
             width: 100%;
-            padding-top: 80px; /* רווח מותאם עבור ה-Navbar הקבוע למעלה */
+            padding-top: 80px;
+            /* רווח מותאם עבור ה-Navbar הקבוע למעלה */
             overflow-y: auto;
             -webkit-overflow-scrolling: touch;
         }
@@ -83,7 +88,8 @@
 
         .full-page-image {
             max-width: 100%;
-            max-height: 85vh; /* שומר שהתמונה לא תהיה ענקית מדי במחשב */
+            max-height: 85vh;
+            /* שומר שהתמונה לא תהיה ענקית מדי במחשב */
             width: auto;
             height: auto;
             display: block;
@@ -100,7 +106,8 @@
             padding: 25px 20px;
             text-align: center;
             box-shadow: 0 -5px 15px rgba(209, 123, 115, 0.05);
-            margin-top: auto; /* מדביק את הפוטר לתחתית אם המסך רחב */
+            margin-top: auto;
+            /* מדביק את הפוטר לתחתית אם המסך רחב */
         }
 
         .footer-text {
@@ -138,7 +145,8 @@
             }
 
             .full-page-image {
-                max-height: none; /* בנייד התמונה תופסת את מלוא הרוחב */
+                max-height: none;
+                /* בנייד התמונה תופסת את מלוא הרוחב */
             }
 
             .footer-text {
@@ -146,11 +154,33 @@
             }
 
             .cta-button {
-                width: 100%; /* כפתור ברוחב מלא בנייד לנוחות לחיצה */
+                width: 100%;
+                /* כפתור ברוחב מלא בנייד לנוחות לחיצה */
             }
+        }
+
+        .footer-section {
+            padding: 25px 0;
+            border-bottom: 1px solid #f2ceca;
+        }
+
+        .footer-section:last-child {
+            border-bottom: none;
+        }
+
+        .footer-section h3 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--text-dark);
+        }
+
+        .footer-section .cta-button {
+            margin-top: 5px;
         }
     </style>
 </head>
+
 <body>
 
     <!-- NAVBAR (בר ניווט עליון) -->
@@ -161,7 +191,8 @@
                 האתר של ספיר
             </a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="פתיחת תפריט">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu"
+                aria-controls="navbarMenu" aria-expanded="false" aria-label="פתיחת תפריט">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -188,12 +219,60 @@
         </div>
 
         <!-- פוטר עם טקסט וכפתור -->
+        <!-- פוטר עם תוכן וקישורים -->
         <footer>
-            <p class="footer-text">
-                מה שקיבלת כאן הוא רק חלק קטן מהתמונה הגדולה.<br>
-                אם את רוצה לגלות איזה סגנון לבוש ואיפור נכון לך, איזה צבעים, תכשיטים ואבני חן מתאימים לך ומה לא מתאים לך – את מוזמנת ללחוץ כאן לפרטים נוספים.
-            </p>
-            <a href="https://dress-from-you-2hl5a.landy-ai.com" class="cta-button">לחצי כאן לפרטים נוספים</a>
+
+            <!-- סרטון הסבר -->
+            <div class="footer-section">
+                <h3>🎥 רוצה להבין לעומק את המפה שקיבלת?</h3>
+
+                <p class="footer-text">
+                    בסרטון הקצר הזה אסביר לך איך לקרוא את מפת המבנה האנרגטי שלך,
+                    מה היא אומרת עלייך ואיך אפשר להתחיל להשתמש בה בחיי היומיום.
+                </p>
+
+                <a href="https://drive.google.com/file/d/1-EkBhhu9mLmnhwwAxnYshimYnhOpVI_5/view?usp=drivesdk"
+                    class="cta-button" target="_blank">
+                    ▶️ לצפייה בסרטון לחצי כאן
+                </a>
+            </div>
+
+
+            <!-- מפות היופי -->
+            <div class="footer-section">
+                <h3>✨ רוצה לגלות מה באמת נכון לך ללבוש?</h3>
+
+                <p class="footer-text">
+                    מפת המבנה האנרגטי היא רק ההתחלה.<br><br>
+
+                    במפות היופי האישיות שלך תגלי:<br>
+                    💎 אילו צבעים מחמיאים לך אנרגטית.<br>
+                    💍 אילו תכשיטים ואבני חן מתאימים לך.<br>
+                    👗 מהו סגנון הלבוש והאיפור שנועדו עבורך לפי השם,
+                    תאריך הלידה ושעת הלידה שלך.
+                </p>
+
+                <a href="https://dress-from-you-2hl5a.landy-ai.com" class="cta-button" target="_blank">
+                    להזמנת מפות היופי לחצי כאן
+                </a>
+            </div>
+
+
+            <!-- ארון מנצח -->
+            <div class="footer-section">
+                <h3>👗 רוצה לבנות ארון שבאמת עובד בשבילך?</h3>
+
+                <p class="footer-text">
+                    אם נמאס לך לעמוד מול ארון מלא ולהרגיש שאין לך מה ללבוש,
+                    תוכנית "ארון מנצח" תלמד אותך איך לבנות ארון חכם, מדויק
+                    ומלא בשילובים שיחסכו לך זמן, כסף ואנרגיה בכל בוקר.
+                </p>
+
+                <a href="https://release-blocks-48h53.landy-ai.com" class="cta-button" target="_blank">
+                    לפרטים ולהצטרפות לחצי כאן
+                </a>
+            </div>
+
         </footer>
     </div>
 
@@ -208,4 +287,5 @@
         });
     </script>
 </body>
+
 </html>
