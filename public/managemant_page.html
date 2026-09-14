@@ -305,6 +305,21 @@
 
                 <div class="flex gap-3">
 
+                    <button id="deleteAllCustomersButton" disabled class="px-4 py-2
+               rounded-lg
+               bg-red-600
+               hover:bg-red-700
+               disabled:bg-slate-300
+               disabled:text-slate-500
+               disabled:cursor-not-allowed
+               text-white
+               transition
+               text-sm">
+
+                        🗑️ מחק את הכל
+
+                    </button>
+
                     <button id="exportButton" class="px-4 py-2
                rounded-lg
                bg-green-600
@@ -888,6 +903,11 @@
                 'exportButton'
             );
 
+        const deleteAllCustomersButton =
+            document.getElementById(
+                'deleteAllCustomersButton'
+            );
+
         const emailBody =
             document.getElementById(
                 'emailBody'
@@ -977,6 +997,8 @@
                 'hidden'
             );
 
+            deleteAllCustomersButton.disabled = true;
+
 
             try {
 
@@ -1053,6 +1075,13 @@
                     return;
 
                 }
+
+
+                // ==========================================
+                // יש לקוחות - אפשר למחוק הכל
+                // ==========================================
+
+                deleteAllCustomersButton.disabled = false;
 
 
                 // ==========================================
@@ -1344,6 +1373,87 @@
 
                 button.textContent =
                     '🗑️ מחיקה';
+
+            }
+
+        }
+
+
+        // ==========================================
+        // מחיקת כל הלקוחות
+        // ==========================================
+
+        async function deleteAllCustomers() {
+
+            if (deleteAllCustomersButton.disabled) {
+                return;
+            }
+
+            const confirmed =
+                confirm(
+                    'האם את בטוחה שברצונך למחוק את כל הלקוחות?\n\nהפעולה אינה ניתנת לביטול.'
+                );
+
+            if (!confirmed) {
+                return;
+            }
+
+            deleteAllCustomersButton.disabled = true;
+            deleteAllCustomersButton.textContent = 'מוחק...';
+
+            try {
+
+                const response =
+                    await fetch(
+                        '/admin/customers',
+                        {
+                            method: 'DELETE',
+                            headers: {
+                                'Authorization':
+                                    `Bearer ${token}`
+                            }
+                        }
+                    );
+
+                if (response.status === 401) {
+                    logout();
+                    return;
+                }
+
+                const data =
+                    await response.json();
+
+                if (!response.ok) {
+                    throw new Error(
+                        data.message ||
+                        'אירעה שגיאה במחיקת כל הלקוחות'
+                    );
+                }
+
+                alert(
+                    `כל הלקוחות נמחקו בהצלחה. נמחקו ${data.deletedCount ?? 0} לקוחות.`
+                );
+
+                await loadCustomers();
+
+            } catch (error) {
+
+                console.error(
+                    'Delete all customers error:',
+                    error
+                );
+
+                alert(
+                    error.message ||
+                    'אירעה שגיאה במחיקת כל הלקוחות'
+                );
+
+                await loadCustomers();
+
+            } finally {
+
+                deleteAllCustomersButton.textContent =
+                    '🗑️ מחק את הכל';
 
             }
 
@@ -2141,6 +2251,12 @@
         exportButton.addEventListener(
             'click',
             exportCustomers
+        );
+
+
+        deleteAllCustomersButton.addEventListener(
+            'click',
+            deleteAllCustomers
         );
 
 
