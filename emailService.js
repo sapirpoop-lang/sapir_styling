@@ -21,6 +21,33 @@ const transporter = nodemailer.createTransport({
 
 
 // ==========================================
+// המרת טקסט רגיל ל-HTML בטוח
+// ==========================================
+
+const textToHtml = (text = '') => {
+
+    return String(text)
+
+        // ==========================================
+        // מניעת הכנסת HTML מתוך הטקסט
+        // ==========================================
+
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;')
+
+        // ==========================================
+        // המרת ירידות שורה ל-HTML
+        // ==========================================
+
+        .replace(/\r\n|\r|\n/g, '<br>');
+
+};
+
+
+// ==========================================
 // שליחת אימייל
 // ==========================================
 
@@ -56,6 +83,14 @@ const sendEmail = async ({
 
         const unsubscribeUrl =
             `${baseUrl}/unsubscribe?email=${encodeURIComponent(to)}`;
+
+
+        // ==========================================
+        // המרת תוכן ההודעה ל-HTML
+        // ==========================================
+
+        const formattedBody =
+            textToHtml(body);
 
 
         // ==========================================
@@ -107,10 +142,11 @@ const sendEmail = async ({
                 dir="rtl"
                 style="
                     font-family: Arial, sans-serif;
+                    line-height: 1.6;
                 "
             >
 
-                ${body}
+                ${formattedBody}
 
                 ${imageHtml}
 
