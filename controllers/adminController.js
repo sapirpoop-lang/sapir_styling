@@ -1266,6 +1266,55 @@ const exportCustomersToExcel = async (req, res) => {
     }
 
 };
+// ==========================================
+// מחיקת כל הלקוחות
+// ==========================================
+
+const deleteAllCustomers = async (req, res) => {
+
+    try {
+
+        // ==========================================
+        // מחיקת כל הלקוחות
+        // ==========================================
+
+        const result =
+            await Customer.deleteMany({});
+
+
+        // ==========================================
+        // הצלחה
+        // ==========================================
+
+        return res.status(200).json({
+
+            message:
+                'כל הלקוחות נמחקו בהצלחה',
+
+            deletedCount:
+                result.deletedCount
+
+        });
+
+
+    } catch (error) {
+
+        console.error(
+            'Delete all customers error:',
+            error
+        );
+
+
+        return res.status(500).json({
+
+            message:
+                'אירעה שגיאה במחיקת כל הלקוחות'
+
+        });
+
+    }
+
+};
 
 // ==========================================
 // Export
@@ -1282,6 +1331,7 @@ module.exports = {
     importCustomersFromExcel,
     deleteCustomer,
     exportCustomersToExcel
-
+,
+deleteAllCustomers
 };
 

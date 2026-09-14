@@ -7,7 +7,8 @@ const {
     sendEmailToAllCustomers,
     importCustomersFromExcel,
     deleteCustomer,
-    exportCustomersToExcel
+    exportCustomersToExcel,
+    deleteAllCustomers
 
 } = require('../controllers/adminController');
 
@@ -95,6 +96,15 @@ router.post(
 
 );
 
+router.delete(
+
+    '/customers',
+
+    adminAuth,
+
+    deleteAllCustomers
+
+);
 
 // ==========================================
 // מחיקת לקוח
@@ -124,6 +134,7 @@ router.get(
     exportCustomersToExcel
 
 );
+
 
 
 // ==========================================
