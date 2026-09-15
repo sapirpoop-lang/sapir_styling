@@ -348,6 +348,41 @@
             </div>
 
 
+            <!-- ========================================== -->
+            <!-- סינון וחיפוש לקוחות -->
+            <!-- ========================================== -->
+
+            <div class="p-6 border-b border-slate-200 grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                <div>
+                    <label for="customerSearch" class="block text-sm font-semibold text-slate-700 mb-2">
+                        חיפוש חופשי
+                    </label>
+                    <input type="text" id="customerSearch"
+                        placeholder="חיפוש לפי שם, אימייל, טלפון..."
+                        class="w-full px-4 py-3 rounded-xl border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
+                </div>
+
+                <div>
+                    <label for="customerGroupFilter" class="block text-sm font-semibold text-slate-700 mb-2">
+                        סינון לפי קבוצה
+                    </label>
+                    <select id="customerGroupFilter"
+                        class="w-full px-4 py-3 rounded-xl border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
+                        <option value="">כל הקבוצות</option>
+                        <option value="מובילה">מובילה</option>
+                        <option value="מקבלת">מקבלת</option>
+                        <option value="מקרינה">מקרינה</option>
+                        <option value="מסתירה">מסתירה</option>
+                    </select>
+                </div>
+
+                <p id="filteredCustomersCount" class="md:col-span-2 text-sm text-slate-500">
+                    מציג 0 מתוך 0 לקוחות
+                </p>
+
+            </div>
+
             <!-- Loading -->
 
             <div id="loadingCustomers" class="p-10 text-center text-slate-500">
@@ -908,6 +943,24 @@
                 'deleteAllCustomersButton'
             );
 
+        const customerSearch =
+            document.getElementById(
+                'customerSearch'
+            );
+
+        const customerGroupFilter =
+            document.getElementById(
+                'customerGroupFilter'
+            );
+
+        const filteredCustomersCount =
+            document.getElementById(
+                'filteredCustomersCount'
+            );
+
+        let allCustomers = [];
+
+
         const emailBody =
             document.getElementById(
                 'emailBody'
@@ -1088,129 +1141,9 @@
                 // יצירת הטבלה
                 // ==========================================
 
-                customersTableBody.innerHTML = '';
+                allCustomers = data.customers;
 
-
-                data.customers.forEach(
-                    (customer, index) => {
-
-                        const row =
-                            document.createElement('tr');
-
-
-                        row.className =
-                            'hover:bg-slate-50 transition';
-
-
-                        const birthDate =
-                            customer.birthDate
-                                ? new Date(
-                                    customer.birthDate
-                                ).toLocaleDateString(
-                                    'he-IL'
-                                )
-                                : '-';
-
-
-                        row.innerHTML = `
-
-                        <td class="px-5 py-4 text-slate-500">
-                            ${index + 1}
-                        </td>
-
-                        <td class="px-5 py-4 font-medium text-slate-800">
-                            ${escapeHtml(
-                            customer.fullName
-                        )}
-                        </td>
-
-                        <td class="px-5 py-4 text-slate-600">
-                            ${escapeHtml(
-                            customer.email
-                        )}
-                        </td>
-
-                        <td class="px-5 py-4 text-slate-600">
-                            ${escapeHtml(
-                            customer.phone
-                        )}
-                        </td>
-
-                        <td class="px-5 py-4 text-slate-600">
-                            ${birthDate}
-                        </td>
-
-                        <td class="px-5 py-4">
-
-                            <span class="inline-flex
-                                         items-center
-                                         justify-center
-                                         w-8 h-8
-                                         rounded-full
-                                         bg-blue-100
-                                         text-blue-700
-                                         font-bold">
-
-                                ${customer.energyNumber ?? '-'}
-
-                            </span>
-
-                        </td>
-
-                        <td class="px-5 py-4 text-slate-600">
-                            ${escapeHtml(
-                            customer.group || '-'
-                        )}
-                        </td>
-
-                        <td class="px-5 py-4 text-slate-600">
-                            ${customer.landingPage ?? '-'}
-                        </td>
-
-
-                        <!-- ========================================== -->
-                        <!-- כפתור מחיקה -->
-                        <!-- ========================================== -->
-
-                        <td class="px-5 py-4">
-
-                            <button
-                                type="button"
-
-                                class="deleteCustomerButton
-                                       bg-red-600
-                                       hover:bg-red-700
-                                       text-white
-                                       px-4
-                                       py-2
-                                       rounded-lg
-                                       text-sm
-                                       font-semibold
-                                       transition
-                                       disabled:bg-slate-400
-                                       disabled:cursor-not-allowed"
-
-                                data-id="${customer._id}"
-
-                                data-name="${escapeHtml(
-                            customer.fullName
-                        )}">
-
-                                🗑️ מחיקה
-
-                            </button>
-
-                        </td>
-
-                    `;
-
-
-                        customersTableBody.appendChild(
-                            row
-                        );
-
-                    }
-                );
+                renderCustomers();
 
 
                 loadingCustomers.classList.add(
@@ -1245,6 +1178,179 @@
                 );
 
             }
+
+        }
+
+
+        // ==========================================
+        // סינון, חיפוש והצגת לקוחות
+        // ==========================================
+
+        function renderCustomers() {
+
+            const searchValue =
+                customerSearch.value
+                    .trim()
+                    .toLowerCase();
+
+            const selectedGroup =
+                customerGroupFilter.value;
+
+
+            const filteredCustomers =
+                allCustomers.filter(customer => {
+
+                    const matchesGroup =
+                        !selectedGroup ||
+                        customer.group === selectedGroup;
+
+
+                    const searchableText = [
+                        customer.fullName,
+                        customer.email,
+                        customer.phone,
+                        customer.birthDate,
+                        customer.energyNumber,
+                        customer.group,
+                        customer.landingPage
+                    ]
+                        .filter(value =>
+                            value !== null &&
+                            value !== undefined
+                        )
+                        .join(' ')
+                        .toLowerCase();
+
+
+                    const matchesSearch =
+                        !searchValue ||
+                        searchableText.includes(searchValue);
+
+
+                    return matchesGroup && matchesSearch;
+
+                });
+
+
+            filteredCustomersCount.textContent =
+                `מציג ${filteredCustomers.length} מתוך ${allCustomers.length} לקוחות`;
+
+
+            customersTableBody.innerHTML = '';
+
+
+            filteredCustomers.forEach(
+                (customer, index) => {
+
+                    const row =
+                        document.createElement('tr');
+
+
+                    row.className =
+                        'hover:bg-slate-50 transition';
+
+
+                    const birthDate =
+                        customer.birthDate
+                            ? new Date(
+                                customer.birthDate
+                            ).toLocaleDateString(
+                                'he-IL'
+                            )
+                            : '-';
+
+
+                    row.innerHTML = `
+
+                        <td class="px-5 py-4 text-slate-500">
+                            ${index + 1}
+                        </td>
+
+                        <td class="px-5 py-4 font-medium text-slate-800">
+                            ${escapeHtml(
+                                customer.fullName
+                            )}
+                        </td>
+
+                        <td class="px-5 py-4 text-slate-600">
+                            ${escapeHtml(
+                                customer.email
+                            )}
+                        </td>
+
+                        <td class="px-5 py-4 text-slate-600">
+                            ${escapeHtml(
+                                customer.phone
+                            )}
+                        </td>
+
+                        <td class="px-5 py-4 text-slate-600">
+                            ${birthDate}
+                        </td>
+
+                        <td class="px-5 py-4">
+
+                            <span class="inline-flex
+                                         items-center
+                                         justify-center
+                                         w-8 h-8
+                                         rounded-full
+                                         bg-blue-100
+                                         text-blue-700
+                                         font-bold">
+
+                                ${customer.energyNumber ?? '-'}
+
+                            </span>
+
+                        </td>
+
+                        <td class="px-5 py-4 text-slate-600">
+                            ${escapeHtml(
+                                customer.group || '-'
+                            )}
+                        </td>
+
+                        <td class="px-5 py-4 text-slate-600">
+                            ${customer.landingPage ?? '-'}
+                        </td>
+
+                        <td class="px-5 py-4">
+
+                            <button
+                                type="button"
+                                class="deleteCustomerButton
+                                       bg-red-600
+                                       hover:bg-red-700
+                                       text-white
+                                       px-4
+                                       py-2
+                                       rounded-lg
+                                       text-sm
+                                       font-semibold
+                                       transition
+                                       disabled:bg-slate-400
+                                       disabled:cursor-not-allowed"
+                                data-id="${customer._id}"
+                                data-name="${escapeHtml(
+                                    customer.fullName
+                                )}">
+
+                                🗑️ מחיקה
+
+                            </button>
+
+                        </td>
+
+                    `;
+
+
+                    customersTableBody.appendChild(
+                        row
+                    );
+
+                }
+            );
 
         }
 
@@ -2241,6 +2347,18 @@
         // ==========================================
         // Events
         // ==========================================
+
+        customerSearch.addEventListener(
+            'input',
+            renderCustomers
+        );
+
+
+        customerGroupFilter.addEventListener(
+            'change',
+            renderCustomers
+        );
+
 
         refreshButton.addEventListener(
             'click',
