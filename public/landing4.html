@@ -291,10 +291,65 @@
                     מה היא אומרת עלייך ואיך אפשר להתחיל להשתמש בה בחיי היומיום.
                 </p>
 
-                <a href="https://drive.google.com/file/d/1-EkBhhu9mLmnhwwAxnYshimYnhOpVI_5/view?usp=drivesdk"
-                    class="cta-button" target="_blank">
-                    ▶️ לצפייה בסרטון לחצי כאן
-                </a>
+                <div style="
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    margin: 15px auto 0;
+">
+
+                    <video id="primeVideo" autoplay muted controls playsinline preload="auto" style="
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            display: block;
+        ">
+                        <source src="/videos/prime_video.mp4" type="video/mp4">
+                        הדפדפן שלך אינו תומך בהצגת וידאו.
+                    </video>
+
+                    <button id="soundButton" type="button" onclick="enableVideoSound()" style="
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+
+            background: #d81b60;
+            color: white;
+            border: none;
+            border-radius: 50px;
+
+            padding: 16px 25px;
+            font-family: Assistant, sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        ">
+                        🔊 לחצי כאן להפעלת הקול
+                    </button>
+
+                </div>
+
+                <script>
+                    function enableVideoSound() {
+                        const video = document.getElementById('primeVideo');
+                        const button = document.getElementById('soundButton');
+
+                        video.muted = false;
+                        video.volume = 1;
+
+                        // מתחיל מחדש כדי שלא תפספס את תחילת ההסבר
+                        video.currentTime = 0;
+
+                        video.play();
+
+                        // מעלים את הכפתור לאחר הלחיצה
+                        button.style.display = 'none';
+                    }
+                </script>
             </div>
 
 
