@@ -215,6 +215,10 @@
         .footer-section .cta-button {
             margin-top: 5px;
         }
+             #primeVideo::cue {
+            font-size: 14px;
+            font-family: Assistant, sans-serif;
+        }
     </style>
 </head>
 
@@ -291,7 +295,7 @@
                     מה היא אומרת עלייך ואיך אפשר להתחיל להשתמש בה בחיי היומיום.
                 </p>
 
-                <div style="
+                 <div style="
     position: relative;
     width: 100%;
     max-width: 700px;
@@ -305,6 +309,10 @@
             display: block;
         ">
                         <source src="/videos/prime_video.mp4" type="video/mp4">
+
+                        <!-- כתוביות בעברית -->
+                        <track src="/videos/prime_video.vtt" kind="subtitles" srclang="he" label="עברית" default>
+
                         הדפדפן שלך אינו תומך בהצגת וידאו.
                     </video>
 
@@ -334,23 +342,30 @@
                 </div>
 
                 <script>
+                    const primeVideo = document.getElementById('primeVideo');
+
+                    // מכריח את הכתוביות להופיע אוטומטית
+                    primeVideo.addEventListener('loadedmetadata', function () {
+                        if (primeVideo.textTracks.length > 0) {
+                            primeVideo.textTracks[0].mode = 'showing';
+                        }
+                    });
+
                     function enableVideoSound() {
-                        const video = document.getElementById('primeVideo');
                         const button = document.getElementById('soundButton');
 
-                        video.muted = false;
-                        video.volume = 1;
+                        primeVideo.muted = false;
+                        primeVideo.volume = 1;
 
                         // מתחיל מחדש כדי שלא תפספס את תחילת ההסבר
-                        video.currentTime = 0;
+                        primeVideo.currentTime = 0;
 
-                        video.play();
+                        primeVideo.play();
 
                         // מעלים את הכפתור לאחר הלחיצה
                         button.style.display = 'none';
                     }
                 </script>
-            </div>
 
 
             <!-- מפות היופי -->

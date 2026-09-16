@@ -215,6 +215,11 @@
         .footer-section .cta-button {
             margin-top: 5px;
         }
+
+        #primeVideo::cue {
+            font-size: 14px;
+            font-family: Assistant, sans-serif;
+        }
     </style>
 </head>
 
@@ -305,6 +310,10 @@
             display: block;
         ">
                         <source src="/videos/prime_video.mp4" type="video/mp4">
+
+                        <!-- כתוביות בעברית -->
+                        <track src="/videos/prime_video.vtt" kind="subtitles" srclang="he" label="עברית" default>
+
                         הדפדפן שלך אינו תומך בהצגת וידאו.
                     </video>
 
@@ -334,59 +343,66 @@
                 </div>
 
                 <script>
+                    const primeVideo = document.getElementById('primeVideo');
+
+                    // מכריח את הכתוביות להופיע אוטומטית
+                    primeVideo.addEventListener('loadedmetadata', function () {
+                        if (primeVideo.textTracks.length > 0) {
+                            primeVideo.textTracks[0].mode = 'showing';
+                        }
+                    });
+
                     function enableVideoSound() {
-                        const video = document.getElementById('primeVideo');
                         const button = document.getElementById('soundButton');
 
-                        video.muted = false;
-                        video.volume = 1;
+                        primeVideo.muted = false;
+                        primeVideo.volume = 1;
 
                         // מתחיל מחדש כדי שלא תפספס את תחילת ההסבר
-                        video.currentTime = 0;
+                        primeVideo.currentTime = 0;
 
-                        video.play();
+                        primeVideo.play();
 
                         // מעלים את הכפתור לאחר הלחיצה
                         button.style.display = 'none';
                     }
                 </script>
-            </div>
 
 
-            <!-- מפות היופי -->
-            <div class="footer-section">
-                <h3>✨ רוצה לגלות מה באמת נכון לך ללבוש?</h3>
+                <!-- מפות היופי -->
+                <div class="footer-section">
+                    <h3>✨ רוצה לגלות מה באמת נכון לך ללבוש?</h3>
 
-                <p class="footer-text">
-                    מפת המבנה האנרגטי היא רק ההתחלה.<br><br>
+                    <p class="footer-text">
+                        מפת המבנה האנרגטי היא רק ההתחלה.<br><br>
 
-                    במפות היופי האישיות שלך תגלי:<br>
-                    💎 אילו צבעים מחמיאים לך אנרגטית.<br>
-                    💍 אילו תכשיטים ואבני חן מתאימים לך.<br>
-                    👗 מהו סגנון הלבוש והאיפור שנועדו עבורך לפי השם,
-                    תאריך הלידה ושעת הלידה שלך.
-                </p>
+                        במפות היופי האישיות שלך תגלי:<br>
+                        💎 אילו צבעים מחמיאים לך אנרגטית.<br>
+                        💍 אילו תכשיטים ואבני חן מתאימים לך.<br>
+                        👗 מהו סגנון הלבוש והאיפור שנועדו עבורך לפי השם,
+                        תאריך הלידה ושעת הלידה שלך.
+                    </p>
 
-                <a href="https://dress-from-you-2hl5a.landy-ai.com" class="cta-button" target="_blank">
-                    להזמנת מפות היופי לחצי כאן
-                </a>
-            </div>
+                    <a href="https://dress-from-you-2hl5a.landy-ai.com" class="cta-button" target="_blank">
+                        להזמנת מפות היופי לחצי כאן
+                    </a>
+                </div>
 
 
-            <!-- ארון מנצח -->
-            <div class="footer-section">
-                <h3>👗 רוצה לבנות ארון שבאמת עובד בשבילך?</h3>
+                <!-- ארון מנצח -->
+                <div class="footer-section">
+                    <h3>👗 רוצה לבנות ארון שבאמת עובד בשבילך?</h3>
 
-                <p class="footer-text">
-                    אם נמאס לך לעמוד מול ארון מלא ולהרגיש שאין לך מה ללבוש,
-                    תוכנית "ארון מנצח" תלמד אותך איך לבנות ארון חכם, מדויק
-                    ומלא בשילובים שיחסכו לך זמן, כסף ואנרגיה בכל בוקר.
-                </p>
+                    <p class="footer-text">
+                        אם נמאס לך לעמוד מול ארון מלא ולהרגיש שאין לך מה ללבוש,
+                        תוכנית "ארון מנצח" תלמד אותך איך לבנות ארון חכם, מדויק
+                        ומלא בשילובים שיחסכו לך זמן, כסף ואנרגיה בכל בוקר.
+                    </p>
 
-                <a href="https://release-blocks-48h53.landy-ai.com" class="cta-button" target="_blank">
-                    לפרטים ולהצטרפות לחצי כאן
-                </a>
-            </div>
+                    <a href="https://release-blocks-48h53.landy-ai.com" class="cta-button" target="_blank">
+                        לפרטים ולהצטרפות לחצי כאן
+                    </a>
+                </div>
 
         </footer>
 
