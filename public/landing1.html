@@ -10,16 +10,15 @@
     <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&family=Heebo:wght@400;500;600;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&family=Heebo:wght@400;500;600;700&display=swap"
         rel="stylesheet">
 
     <!-- BOOTSTRAP RTL & ICONS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <style>
+
         /* איפוס הגדרות ברירת מחדל */
         * {
             box-sizing: border-box;
@@ -80,12 +79,9 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-
             min-height: 100%;
             width: 100%;
-
             padding-top: 80px;
-
             overflow-y: auto;
             -webkit-overflow-scrolling: touch;
         }
@@ -97,24 +93,18 @@
 
         .image-container {
             width: 100%;
-
             display: flex;
             justify-content: center;
-
             padding: 20px 10px 0 10px;
         }
 
         .full-page-image {
             max-width: 100%;
             max-height: 85vh;
-
             width: auto;
             height: auto;
-
             display: block;
-
             object-fit: contain;
-
             border-radius: 12px;
         }
 
@@ -126,28 +116,63 @@
         footer {
             width: 100%;
             max-width: 800px;
-
             background-color: #fffbf9;
-
             border-top: 2px solid #f2ceca;
-
             padding: 25px 20px;
-
             text-align: center;
-
-            box-shadow:
-                0 -5px 15px rgba(209, 123, 115, 0.05);
-
+            box-shadow: 0 -5px 15px rgba(209, 123, 115, 0.05);
             margin-top: auto;
         }
 
         .footer-text {
             font-size: 1.1rem;
             line-height: 1.6;
-
             margin-bottom: 18px;
-
             color: var(--text-dark);
+        }
+
+        .footer-section {
+            padding: 25px 0;
+            border-bottom: 1px solid #f2ceca;
+        }
+
+        .footer-section:last-child {
+            border-bottom: none;
+        }
+
+        .footer-section h3 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--text-dark);
+        }
+
+        .footer-section .cta-button {
+            margin-top: 5px;
+        }
+
+
+        /* ========================================
+           YOUTUBE VIDEO
+        ======================================== */
+
+        .youtube-video-container {
+            position: relative;
+            width: 100%;
+            max-width: 700px;
+            margin: 15px auto 0;
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            background-color: #000;
+        }
+
+        .youtube-video-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
         }
 
 
@@ -157,35 +182,22 @@
 
         .cta-button {
             display: inline-block;
-
             background-color: var(--cta-pink);
-
             color: #ffffff;
-
             text-decoration: none;
-
             padding: 12px 28px;
-
             font-size: 1.1rem;
             font-weight: 700;
-
             border-radius: 30px;
-
             transition: all 0.3s ease;
-
-            box-shadow:
-                0 4px 10px rgba(209, 123, 115, 0.3);
+            box-shadow: 0 4px 10px rgba(209, 123, 115, 0.3);
         }
 
         .cta-button:hover {
             background-color: var(--cta-pink-hover);
-
             color: #ffffff;
-
             transform: translateY(-2px);
-
-            box-shadow:
-                0 6px 15px rgba(209, 123, 115, 0.4);
+            box-shadow: 0 6px 15px rgba(209, 123, 115, 0.4);
         }
 
 
@@ -212,29 +224,6 @@
             }
         }
 
-        .footer-section {
-            padding: 25px 0;
-            border-bottom: 1px solid #f2ceca;
-        }
-
-        .footer-section:last-child {
-            border-bottom: none;
-        }
-
-        .footer-section h3 {
-            font-size: 1.35rem;
-            font-weight: 700;
-            margin-bottom: 12px;
-            color: var(--text-dark);
-        }
-
-        .footer-section .cta-button {
-            margin-top: 5px;
-        }
-             #primeVideo::cue {
-            font-size: 14px;
-            font-family: Assistant, sans-serif;
-        }
     </style>
 
 </head>
@@ -252,34 +241,40 @@
 
             <a class="navbar-brand fw-bold text-dark" href="/">
                 <i class="bi bi-stars text-danger"></i>
-
                 האתר של ספיר
             </a>
 
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarMenu"
+                aria-controls="navbarMenu"
+                aria-expanded="false"
+                aria-label="פתיחת תפריט">
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu"
-                aria-controls="navbarMenu" aria-expanded="false" aria-label="פתיחת תפריט">
                 <span class="navbar-toggler-icon"></span>
-            </button>
 
+            </button>
 
             <div class="collapse navbar-collapse" id="navbarMenu">
 
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
                     <li class="nav-item">
-
                         <a class="nav-link" href="/about">
                             אודות
                         </a>
-
                     </li>
 
                 </ul>
 
+                <a
+                    href="https://dress-from-you-2hl5a.landy-ai.com"
+                    class="btn btn-navbar-custom">
 
-                <a href="https://dress-from-you-2hl5a.landy-ai.com" class="btn btn-navbar-custom">
                     הרשמה עכשיו
+
                 </a>
 
             </div>
@@ -287,7 +282,6 @@
         </div>
 
     </nav>
-
 
 
     <!-- ========================================
@@ -301,10 +295,12 @@
 
         <div class="image-container">
 
-            <img src="/images/movila.jpeg" alt="המבנה האנרגטי שלך - מובילה" class="full-page-image">
+            <img
+                src="/images/movila.jpeg"
+                alt="המבנה האנרגטי שלך - מובילה"
+                class="full-page-image">
 
         </div>
-
 
 
         <!-- ========================================
@@ -313,158 +309,143 @@
 
         <footer>
 
-            <!-- סרטון הסבר -->
-            <!-- סרטון הסבר -->
+
+            <!-- ========================================
+                 סרטון הסבר - YOUTUBE
+            ========================================= -->
+
             <div class="footer-section">
 
-                <h3>🎥 רוצה להבין לעומק את המפה שקיבלת?</h3>
+                <h3>
+                    🎥 רוצה להבין לעומק את המפה שקיבלת?
+                </h3>
 
                 <p class="footer-text">
+
                     בסרטון הקצר הזה אסביר לך איך לקרוא את מפת המבנה האנרגטי שלך,
                     מה היא אומרת עלייך ואיך אפשר להתחיל להשתמש בה בחיי היומיום.
+
                 </p>
-                <div style="
-    position: relative;
-    width: 100%;
-    max-width: 700px;
-    margin: 15px auto 0;
-">
 
-                    <video id="primeVideo" autoplay muted controls playsinline preload="auto" style="
-            width: 100%;
-            height: auto;
-            border-radius: 12px;
-            display: block;
-        ">
-                        <source src="/videos/prime_video.mp4" type="video/mp4">
 
-                        <!-- כתוביות בעברית -->
-                        <track src="/videos/prime_video.vtt" kind="subtitles" srclang="he" label="עברית" default>
+                <div class="youtube-video-container">
 
-                        הדפדפן שלך אינו תומך בהצגת וידאו.
-                    </video>
-
-                    <button id="soundButton" type="button" onclick="enableVideoSound()" style="
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 10;
-
-            background: #d81b60;
-            color: white;
-            border: none;
-            border-radius: 50px;
-
-            padding: 16px 25px;
-            font-family: Assistant, sans-serif;
-            font-size: 18px;
-            font-weight: 700;
-
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-        ">
-                        🔊 לחצי כאן להפעלת הקול
-                    </button>
+                    <iframe
+                        src="https://www.youtube.com/embed/cJGRUuEDoiI"
+                        title="הסבר על מפת המבנה האנרגטי שלך"
+                        loading="lazy"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen>
+                    </iframe>
 
                 </div>
 
-                <script>
-                    const primeVideo = document.getElementById('primeVideo');
-
-                    // מכריח את הכתוביות להופיע אוטומטית
-                    primeVideo.addEventListener('loadedmetadata', function () {
-                        if (primeVideo.textTracks.length > 0) {
-                            primeVideo.textTracks[0].mode = 'showing';
-                        }
-                    });
-
-                    function enableVideoSound() {
-                        const button = document.getElementById('soundButton');
-
-                        primeVideo.muted = false;
-                        primeVideo.volume = 1;
-
-                        // מתחיל מחדש כדי שלא תפספס את תחילת ההסבר
-                        primeVideo.currentTime = 0;
-
-                        primeVideo.play();
-
-                        // מעלים את הכפתור לאחר הלחיצה
-                        button.style.display = 'none';
-                    }
-                </script>
+            </div>
 
 
+            <!-- ========================================
+                 מפות היופי
+            ========================================= -->
 
-
-            <!-- מפות היופי -->
             <div class="footer-section">
-                <h3>✨ רוצה לגלות מה באמת נכון לך ללבוש?</h3>
+
+                <h3>
+                    ✨ רוצה לגלות מה באמת נכון לך ללבוש?
+                </h3>
 
                 <p class="footer-text">
-                    מפת המבנה האנרגטי היא רק ההתחלה.<br><br>
 
-                    במפות היופי האישיות שלך תגלי:<br>
-                    💎 אילו צבעים מחמיאים לך אנרגטית.<br>
-                    💍 אילו תכשיטים ואבני חן מתאימים לך.<br>
+                    מפת המבנה האנרגטי היא רק ההתחלה.
+
+                    <br><br>
+
+                    במפות היופי האישיות שלך תגלי:
+
+                    <br>
+
+                    💎 אילו צבעים מחמיאים לך אנרגטית.
+
+                    <br>
+
+                    💍 אילו תכשיטים ואבני חן מתאימים לך.
+
+                    <br>
+
                     👗 מהו סגנון הלבוש והאיפור שנועדו עבורך לפי השם,
                     תאריך הלידה ושעת הלידה שלך.
+
                 </p>
 
-                <a href="https://dress-from-you-2hl5a.landy-ai.com" class="cta-button" target="_blank">
+                <a
+                    href="https://dress-from-you-2hl5a.landy-ai.com"
+                    class="cta-button"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
                     להזמנת מפות היופי לחצי כאן
+
                 </a>
+
             </div>
 
 
-            <!-- ארון מנצח -->
+            <!-- ========================================
+                 ארון מנצח
+            ========================================= -->
+
             <div class="footer-section">
-                <h3>👗 רוצה לבנות ארון שבאמת עובד בשבילך?</h3>
+
+                <h3>
+                    👗 רוצה לבנות ארון שבאמת עובד בשבילך?
+                </h3>
 
                 <p class="footer-text">
+
                     אם נמאס לך לעמוד מול ארון מלא ולהרגיש שאין לך מה ללבוש,
-                    תוכנית "ארון מנצח" תלמד אותך איך לבנות ארון חכם, מדויק
-                    ומלא בשילובים שיחסכו לך זמן, כסף ואנרגיה בכל בוקר.
+                    תוכנית "ארון מנצח" תלמד אותך איך לבנות ארון חכם,
+                    מדויק ומלא בשילובים שיחסכו לך זמן,
+                    כסף ואנרגיה בכל בוקר.
+
                 </p>
 
-                <a href="https://release-blocks-48h53.landy-ai.com" class="cta-button" target="_blank">
+                <a
+                    href="https://release-blocks-48h53.landy-ai.com"
+                    class="cta-button"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
                     לפרטים ולהצטרפות לחצי כאן
+
                 </a>
+
             </div>
+
 
         </footer>
 
     </div>
 
 
-
     <!-- ========================================
          BOOTSTRAP
     ========================================= -->
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
-    </script>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 
     <!-- ========================================
          ACCESSIBILITY
     ========================================= -->
 
-    <script src="https://cdn.jsdelivr.net/gh/yortem/yAccessibility@latest/yaccessibility.js">
-    </script>
+    <script src="https://cdn.jsdelivr.net/gh/yortem/yAccessibility@latest/yaccessibility.js"></script>
 
     <script>
 
         yAccessibility({
-
             language: 'he',
-
             verticalPosition: 'bottom',
-
             verticalOffset: 20
-
         });
 
     </script>
